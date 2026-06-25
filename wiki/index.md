@@ -9,6 +9,7 @@
 - [PM 3 — Methodologies](sources/pm-3-methodologies.md) — Waterfall vs Agile, Agile Manifesto, velocity, типы контрактов. Источник: `raw/Lectures Summaries/pm 3 Methodologies_lecture...`, `raw/Slides/PM 3 Methodologies.pdf`, `raw/Slides/Methodologies_PM Tasks.pdf`, `raw/Transcriptions/Копия PM 3 Methodologies.txt`
 - [PM 4 — Agile-методологии](sources/pm-4-agile-methodologies.md) — обзор Scrum, Kanban, Scrumban, XP, Lean и масштабируемых фреймворков (LeSS, SAFe, Nexus). Источник: `raw/Lectures Summaries/pm_4 Agile Methodologies.md`, `raw/Slides/PM 4 Agile methodologies.pptx.pdf`, `raw/Slides/Agile Frameworks_PM Tasks.pdf`, `raw/Transcriptions/Копия PM 4 Agile methodologies.txt`
 - [PM 5 — Scrum](sources/pm-5-scrum.md) — углублённый разбор Scrum: эмпирическое управление, роли, артефакты, 4 формальных события, Backlog Refinement. Источник: `raw/Lectures Summaries/pm_5 Scrum_2026-06-23_12-10.md`, `raw/Slides/PM 5 Scrum.pdf`, `raw/Slides/Scrum Framework_PM Tasks.pdf`, `raw/Transcriptions/Копия PM 5 Scrum.txt`
+- [PM 6 — SDLC](sources/pm-6-sdlc.md) — SDLC (этапы, модели, SRS/DDS), DevOps-цикл, Build/Release, среды Dev/Staging/Prod, Git/GitHub/PR/Code Review, CI/CD. Источник: `raw/Lectures Summaries/pm_6 SDLC.md`, `raw/Slides/PM 6 SDLC.pptx.pdf`, `raw/Transcriptions/Копия PM 6 SDLC.txt.done`
 
 ## Entities
 
@@ -36,3 +37,7 @@
 - [XP (Extreme Programming)](concepts/xp.md) — TDD, парное программирование, CI, рефакторинг; только для разработки ПО.
 - [Lean](concepts/lean.md) — философия устранения потерь; 6 видов потерь (IT) vs 8 классических (производство).
 - [Масштабирование Agile (LeSS, SAFe, Nexus)](concepts/scaling-frameworks.md) — фреймворки для нескольких Scrum-команд, PI Planning, Nexus Integration Team.
+- [SDLC](concepts/sdlc.md) — 6 этапов жизненного цикла ПО, 5 моделей (Waterfall/Iterative/Spiral/V-model/RAD), SRS/DDS, Jira workflow как зеркало SDLC.
+- [DevOps](concepts/devops.md) — культура Dev+Ops, 8-этапный цикл с инструментами, Build vs Release, Deployment vs Release Management, три среды.
+- [CI/CD](concepts/cicd.md) — Continuous Integration, Continuous Delivery, Continuous Deployment: различия и когда что применять.
+- [Version Control / Git / GitHub](concepts/version-control.md) — VCS, Git (commit/branch/merge), GitHub, Pull Request, Code Review, Approve.
