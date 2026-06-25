@@ -56,5 +56,6 @@ title: Version Control, Git, GitHub
 ## Связанные страницы
 - [[devops]] — Code-этап и инструменты (Git, GitHub, VS Code, IntelliJ)
 - [[cicd]] — CI запускается автоматически при каждом push/commit
+- [[xp]] — XP ввёл практику Continuous Integration и коллективного владения кодом, из которой выросли PR и Code Review
 - [[sdlc]] — разработка как этап SDLC
 - [[pm-6-sdlc]]

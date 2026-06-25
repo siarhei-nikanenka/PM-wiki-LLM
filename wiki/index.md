@@ -26,7 +26,7 @@
 - [Оценка проекта (4 параметра)](concepts/project-estimation.md) — ресурсы, время, экспертиза, деньги.
 - [Стейкхолдеры](concepts/stakeholders.md) — карта стейкхолдеров, управление ожиданиями.
 - [Роль PM](concepts/pm-role.md) — PM как интегратор процессов, soft skills.
-- [Waterfall](concepts/waterfall.md) — каскадная модель, WBS, Change Management.
+- [Waterfall](concepts/waterfall.md) — каскадная модель, WBS, Change Management; старейшая SDLC-модель, риски и способы их снижения.
 - [Agile](concepts/agile.md) — итеративная методология, спринты.
 - [Agile Manifesto](concepts/agile-manifesto.md) — 4 приоритета, 12 принципов.
 - [Velocity и метрики Agile](concepts/velocity-metrics.md) — Velocity, Cycle Time, Predictable Pace/Estimates.
