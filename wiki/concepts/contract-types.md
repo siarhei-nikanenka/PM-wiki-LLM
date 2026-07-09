@@ -15,6 +15,7 @@ title: Типы контрактов
 - Гибкость: низкая, изменения вносятся болезненно (формальный Change Request).
 - Риски: на исполнителе.
 - Логично сочетается с [[waterfall]].
+- Фиксация границ продукта в Product Vision на этапе [[discovery-phase]] — ключевая защита от scope creep именно для Fixed Price.
 
 ## Time & Materials (T&M, Time and Expenses)
 Идеален для развивающихся проектов с нечётко сформированными требованиями. Оплата по почасовой ставке прямых трудозатрат.
@@ -43,4 +44,5 @@ title: Типы контрактов
 - [[scrum]]
 - [[scope-creep]]
 - [[iron-triangle]]
+- [[discovery-phase]]
 - [[pm-3-methodologies]]
