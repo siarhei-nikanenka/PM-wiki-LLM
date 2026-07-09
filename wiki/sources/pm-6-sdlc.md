@@ -7,7 +7,7 @@ title: PM 6 — SDLC
 **Источники:**
 - `raw/Lectures Summaries/pm_6 SDLC.md`
 - `raw/Slides/PM 6 SDLC.pptx.pdf`
-- `raw/Transcriptions/Копия PM 6 SDLC.txt.done`
+- `raw/Transcriptions/Копия PM 6 SDLC.txt`
 
 **Главная идея:** PM должен понимать технические основы SDLC, модели разработки и инструменты команды (Git, CI/CD, DevOps), чтобы эффективно планировать, оценивать риски и говорить с разработчиками на одном языке.
 

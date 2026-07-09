@@ -44,6 +44,9 @@ title: Scrum
 ## Когда Scrum работает
 PO активно участвует и даёт регулярную обратную связь; продукт можно поставлять частями с новой ценностью для бизнеса каждый раз; высокая вероятность изменений, и клиент к ним готов; тип контракта — Time & Materials или Dedicated Team (см. [[contract-types]]).
 
+## Scrum и PMBOK
+События Scrum зеркалят процессные группы PMBOK 6 (Sprint Planning ≈ Планирование, реализация задач/Daily Scrum ≈ Исполнение, Sprint Review ≈ Мониторинг) — подробнее в [[pmbok-process-groups]]. Sprint Review, Retrospective, Daily Scrum и Sprint Planning также образуют цикл накопления и передачи знаний команды — см. [[knowledge-management]].
+
 ## Связанные страницы
 - [[pm-4-agile-methodologies]]
 - [[pm-5-scrum]]
@@ -53,3 +56,5 @@ PO активно участвует и даёт регулярную обрат
 - [[velocity-metrics]]
 - [[contract-types]]
 - [[scaling-frameworks]]
+- [[pmbok-process-groups]]
+- [[knowledge-management]]
