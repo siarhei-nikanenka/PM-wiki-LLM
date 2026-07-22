@@ -96,3 +96,33 @@
   - concepts/project-estimation.md — добавлен абзац про PERT-оценку задач со ссылкой на [[rfx]].
   - concepts/scrum.md — добавлен раздел «Scrum и PMBOK» со ссылками на [[pmbok-process-groups]] и [[knowledge-management]] (события Scrum как зеркало процессных групп PMBOK и как инструмент управления знаниями).
   - concepts/waterfall.md — упоминание WBS превращено в ссылку на [[wbs]], добавлено в «Связанные страницы».
+
+## 2026-07-22 ingest | PM 10 Scope Management, PM 11 Requirements Documentation, PM 15 Management 3.0
+Поглощены материалы лекций 10, 11 и 15 курса «Управление проектами в IT» (summary + slides + транскрипты для каждой), плюс попутно обнаруженный `raw/Slides/PMBOK Integration_PM Tasks.pdf` с детализацией практических заданий, уже описанных в pm-9-project-integration.md.
+Создано:
+- sources: pm-10-scope-management.md, pm-11-requirements-documentation.md, pm-15-management-3-0.md
+- entities: jurgen-appelo.md
+- concepts: scope-management.md, requirements-types.md, requirements-elicitation.md, requirements-modeling.md, srs-and-tz.md, user-stories-and-use-cases.md, requirements-quality.md, management-3-0.md, management-3-0-tools.md
+Обновлены:
+- concepts/scope-creep.md — добавлена ссылка на [[scope-management]] (Control Scope как формальный процесс борьбы со scope creep).
+- concepts/wbs.md — добавлена ссылка на [[scope-management]] (Create WBS — один из 6 процессов).
+- concepts/stakeholders.md — добавлен абзац о том, что идентификация стейкхолдеров предшествует сбору требований, ссылка на [[requirements-elicitation]].
+- concepts/pm-role.md — добавлены разделы «PM и бизнес-аналитик» и «PM как садовник (Management 3.0)» со ссылками на [[scope-management]], [[requirements-elicitation]], [[management-3-0]], [[management-3-0-tools]].
+- entities/pm-it-course.md — темы 12 и 15 программы дополнены ссылками на новые страницы; тема 15 — редкий случай точного совпадения номера темы с номером лекции.
+- sources/pm-9-project-integration.md — добавлен источник `raw/Slides/PMBOK Integration_PM Tasks.pdf`.
+- overview.md — добавлены абзацы «Управление содержанием и работа с требованиями» и «Управление людьми: Management 3.0».
+- index.md — добавлены все новые страницы (3 sources, 1 entity, 9 concepts).
+Примечания:
+- Слайды PM 10/PM 11 (`*.pptx.pdf`) и PM 15 (`PM 15 менеджмент 3.0.pdf`) отдельных source-страниц не получили — они дублируют содержание Lectures Summaries и упомянуты как источники в соответствующих sources/pm-N-*.md (та же логика, что и в предыдущих ingest).
+- Delegation Poker: транскрипт PM 15 явно называет только 6 из 7 уровней делегирования (пропущен «Sell» между «Tell» и «Consult»), но письменное summary (`pm_15 Management 30.md`) и стандартная модель Аппело дают полный список из 7 — concepts/management-3-0-tools.md использует полный список из summary, расхождение зафиксировано здесь как примечание.
+- Тема 12 программы курса («Техническое задание. Работа с требованиями») по факту раскрыта в двух лекциях — pm-10-scope-management (scope) и pm-11-requirements-documentation (документирование) — тот же паттерн растягивания одной темы программы на несколько занятий, что уже наблюдался для тем 3–5.
+
+## 2026-07-22 lint
+Проверка вики после ingest PM 10/11/15: битые `[[ссылки]]` (скриптом по всем .md), страницы-сироты (наличие входящих ссылок помимо index.md), полнота index.md, потенциальные противоречия с ранее известными фактами.
+Находки:
+- Битых `[[ссылок]]` не найдено.
+- Сирот не найдено — все 13 новых страниц (3 sources, 1 entity, 9 concepts) имеют входящие ссылки помимо index.md.
+- Все файлы concepts/entities/sources присутствуют в index.md.
+- Противоречий не найдено. Упоминания «бизнес-аналитика» в sources/pm-1-intro.md (самопрезентации студентов Ольги/Татьяны/Дмитрия) не конфликтуют с новой ролью БА в scope-management.md — это разные контексты (биография студентов курса vs формальная роль в PMBOK-процессах).
+- MoSCoW/WSJF упоминаются только в новом concepts/requirements-quality.md, дублирования с contract-types.md или другими страницами нет.
+- Единственное известное расхождение — Delegation Poker (6 названных уровней в транскрипте PM 15 vs 7 в письменном summary) — уже задокументировано в записи ingest выше, не требует дополнительных правок.
