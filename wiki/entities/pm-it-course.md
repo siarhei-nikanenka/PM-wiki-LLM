@@ -20,10 +20,10 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 9. Soft Skills менеджера проектов ([[pm-role]]) — по факту [[pm-9-project-integration]] на этом месте программы разбирает не soft skills, а управление интеграцией проекта и процессные группы PMBOK ([[pmbok-process-groups]], [[knowledge-management]], [[project-closure]])
 10. Настройка процессов на проекте
 11. Управление коммуникациями проекта
-12. Техническое задание. Работа с требованиями
+12. Техническое задание. Работа с требованиями ([[scope-management]], [[requirements-types]], [[requirements-elicitation]], [[requirements-modeling]], [[srs-and-tz]]) — [[pm-10-scope-management]], [[pm-11-requirements-documentation]]
 13. Управление качеством на проекте
 14. Управление рисками
-15. Управление мотивацией команды проекта
+15. Управление мотивацией команды проекта ([[management-3-0]], [[management-3-0-tools]]) — [[pm-15-management-3-0]]; номер лекции совпадает с номером темы программы, редкий случай для этого курса
 16. Управление изменениями
 17. Agile-ретроспектива
 18. Процессы завершения проекта — уже частично затронуто в [[pm-9-project-integration]] ([[project-closure]]), опережая порядковый номер темы в программе
@@ -33,4 +33,4 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 ## Оценка
 50% — средний балл промежуточных и финального тестов, 50% — защита учебного проекта (накопленный пакет ДЗ на придуманный продукт, презентация 15–20 минут). Сертификат: «Successfully Completed» при среднем балле ≥7, иначе «Completed».
 
-**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]]
+**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]], [[pm-10-scope-management]], [[pm-11-requirements-documentation]], [[pm-15-management-3-0]]

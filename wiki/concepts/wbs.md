@@ -6,7 +6,7 @@ title: WBS (Work Breakdown Structure)
 
 Из [[pm-7-discovery-and-initiation]].
 
-WBS — ключевой инструмент классического PM, разбивающий проект на измеримые результаты (**deliverables**), а не на действия. В PMBOK 7 WBS относится к домену «доставка продукта» (delivery) — том же домене, что и работа с требованиями (см. [[pmbok]]).
+WBS — ключевой инструмент классического PM, разбивающий проект на измеримые результаты (**deliverables**), а не на действия. В PMBOK 7 WBS относится к домену «доставка продукта» (delivery) — том же домене, что и работа с требованиями (см. [[pmbok]]). В PMBOK 6 **Create WBS** — один из шести процессов [[scope-management|Project Scope Management]], идущий сразу после Define Scope.
 
 ## Четыре принципа
 
@@ -33,4 +33,5 @@ WBS можно строить, группируя работы по:
 - [[project-charter]]
 - [[rfx]]
 - [[pmbok-process-groups]]
+- [[scope-management]]
 - [[pm-7-discovery-and-initiation]]

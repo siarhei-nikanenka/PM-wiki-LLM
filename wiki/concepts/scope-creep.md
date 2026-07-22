@@ -14,6 +14,8 @@ title: Scope Creep
 
 На разных этапах проекта против scope creep применяются разные инструменты: на старте — Product Vision из [[discovery-phase]] и assumptions в [[rfx]] (RFP), после формальной сдачи результатов — разграничение ответственности при [[project-closure|закрытии проекта]] (запрос «пары небольших фич» после подписания акта — типичный поздний scope creep).
 
+Формальный процесс борьбы со scope creep в PMBOK 6 называется **Control Scope** — один из шести процессов [[scope-management|Project Scope Management]], сильно пересекающийся с контролем изменений в управлении интеграцией.
+
 ## Связанные страницы
 - [[iron-triangle]]
 - [[waterfall]]
@@ -21,4 +23,5 @@ title: Scope Creep
 - [[discovery-phase]]
 - [[rfx]]
 - [[project-closure]]
+- [[scope-management]]
 - [[pm-2-main-notions]]
