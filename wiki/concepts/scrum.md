@@ -54,6 +54,7 @@ PO активно участвует и даёт регулярную обрат
 - [[kanban]]
 - [[scrumban]]
 - [[velocity-metrics]]
+- [[agile-planning]]
 - [[contract-types]]
 - [[scaling-frameworks]]
 - [[pmbok-process-groups]]

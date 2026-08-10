@@ -126,3 +126,36 @@
 - Противоречий не найдено. Упоминания «бизнес-аналитика» в sources/pm-1-intro.md (самопрезентации студентов Ольги/Татьяны/Дмитрия) не конфликтуют с новой ролью БА в scope-management.md — это разные контексты (биография студентов курса vs формальная роль в PMBOK-процессах).
 - MoSCoW/WSJF упоминаются только в новом concepts/requirements-quality.md, дублирования с contract-types.md или другими страницами нет.
 - Единственное известное расхождение — Delegation Poker (6 названных уровней в транскрипте PM 15 vs 7 в письменном summary) — уже задокументировано в записи ingest выше, не требует дополнительных правок.
+
+## 2026-08-10 ingest | PM 12 Schedule Management, PM 13 Agile Planning, PM 14 Change Management, PM 16 Cost Management, PM 17 Risk Management
+Поглощены материалы пяти лекций курса «Управление проектами в IT» (summary + slides + транскрипты для каждой). Примечание: raw-файл `pm_14 Change Management.md` начинается со служебной строки инструмента-источника («Не удалось получить разрешение на запись файла — покажу материалы прямо в чате.») — не является частью содержания лекции, проигнорирована при написании wiki-страниц, сам raw-файл не редактировался.
+Создано:
+- sources: pm-12-schedule-management.md, pm-13-agile-planning.md, pm-14-change-management.md, pm-16-cost-management.md, pm-17-risk-management.md
+- concepts: schedule-management.md, agile-planning.md, prioritization.md, change-management.md, cost-management.md, risk-management.md
+Обновлены:
+- concepts/velocity-metrics.md — добавлен раздел «Условия надёжности метрики» (стабильный состав команды, полная оценка всех задач, некорректность межкомандного сравнения velocity) по материалам PM 13.
+- concepts/contract-types.md — добавлены ссылки на [[change-management]] и [[cost-management]] в разделах Fixed Price/T&M/Outstaff (резервы на риски, burn rate, FTE) по материалам PM 16.
+- concepts/project-estimation.md — добавлен абзац о переиспользовании трёхточечной формулы PERT в [[schedule-management]] и [[cost-management]].
+- concepts/pmbok-process-groups.md — области знаний «Сроки», «Стоимость», «Риски» связаны с новыми страницами; добавлены ссылки в «Связанные страницы».
+- concepts/scope-management.md — Control Scope явно связан с Perform Integrated Change Control / [[change-management]].
+- concepts/requirements-quality.md — WSJF в разделе «Приоритизация» связан с новой страницей [[prioritization]] (более полное раскрытие формулы и Cost of Delay).
+- entities/pm-it-course.md — программа курса (20 тем) дополнена ссылками на новые лекции; зафиксированы несовпадения номеров лекций и тем программы (PM 16 → тема 6, PM 14 → тема 16, PM 17 → тема 14, PM 12 и PM 13 не имеют точного соответствия в списке тем).
+- overview.md — добавлены абзацы «Оставшиеся три угла тройного ограничения: сроки, стоимость, риски», «Планирование в Agile и приоритизация ценности», «Управление изменениями: документы и люди».
+- index.md — добавлены все новые страницы (5 sources, 6 concepts).
+Примечания:
+- Слайды PM 12/13/16/17 (`*.pptx.pdf`) и PM 14 (`PM 14 Change Management.pdf`) отдельных source-страниц не получили — упомянуты как источники в соответствующих sources/pm-N-*.md, та же логика, что и в предыдущих ingest.
+- WSJF/Cost of Delay вынесены в отдельную страницу concepts/prioritization.md, а не объединены с agile-planning.md — тема достаточно самостоятельна (применима и вне Agile-контекста, пересекается с MoSCoW из requirements-quality.md) и заслуживает собственной точки входа в index.md.
+
+## 2026-08-10 lint
+Полный проход по чек-листу после ingest PM 12/13/14/16/17: битые `[[ссылки]]` (скриптом по всем .md), страницы-сироты (наличие входящих ссылок помимо index.md/log.md/overview.md), противоречия между новыми и существующими страницами, недостающие кросс-ссылки.
+Находки:
+- Битых `[[ссылок]]` не найдено.
+- Сирот не найдено.
+- Противоречий не найдено (резервы на риски, критический путь, Velocity, WSJF — согласованы между всеми упоминающими страницами).
+- Недостающие кросс-ссылки — исправлены:
+  - concepts/project-charter.md — разделы устава «Высокоуровневые риски», «Контрольные события», «Сводный бюджет» связаны с [[risk-management]], [[schedule-management]], [[cost-management]] соответственно.
+  - concepts/management-3-0.md — добавлена ссылка на [[change-management]] (человеческая сторона трансформаций пересекается с философией M3.0).
+  - concepts/wbs.md — добавлен абзац и ссылка на [[risk-management]] (RBS как переиспользование принципа WBS для рисков).
+  - concepts/rfx.md — добавлена явная отсылка к формуле PERT в [[schedule-management]] и [[cost-management]].
+  - concepts/iron-triangle.md — добавлен абзац, связывающий три угла треугольника с [[scope-management]]/[[schedule-management]]/[[cost-management]], и ссылка на [[change-management]] как формальный процесс изменения baseline.
+  - concepts/scrum.md — добавлена ссылка на [[agile-planning]] (детализация уровней бэклога внутри Scrum-практики).

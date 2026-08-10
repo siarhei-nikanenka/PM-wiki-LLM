@@ -47,4 +47,5 @@ title: Management 3.0
 - [[pm-role]]
 - [[team-charter]]
 - [[scrum]]
+- [[change-management]]
 - [[pm-15-management-3-0]]

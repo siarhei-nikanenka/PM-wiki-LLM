@@ -27,7 +27,7 @@ title: Project Scope Management (PMBOK 6)
 
 **Группа мониторинга и контроля:**
 5. **Validate Scope** — формальная приёмка результатов проекта заказчиком/стейкхолдерами.
-6. **Control Scope** — мониторинг состояния содержания и управление изменениями базового плана; сильно пересекается с контролем изменений в управлении интеграцией (см. [[pmbok-process-groups]]).
+6. **Control Scope** — мониторинг состояния содержания и управление изменениями базового плана; сильно пересекается с Perform Integrated Change Control из управления интеграцией (см. [[pmbok-process-groups]] и подробнее — [[change-management]], где разбирается сам процесс работы с change request, реестром изменений и сопротивлением команды).
 
 План управления содержанием может быть формальным и детализированным или упрощённым — в зависимости от масштаба, сложности проекта и выбранной методологии.
 
@@ -50,5 +50,6 @@ title: Project Scope Management (PMBOK 6)
 - [[requirements-elicitation]]
 - [[discovery-phase]]
 - [[pmbok-process-groups]]
+- [[change-management]]
 - [[stakeholders]]
 - [[pm-10-scope-management]]
