@@ -12,7 +12,13 @@ title: Iron Triangle (проектный треугольник)
 
 При запросе клиента на изменение без сдвига срока и бюджета у PM обычно есть три варианта ответа: подвинуть scope (урезать другую функциональность), подвинуть срок, подвинуть бюджет — либо явно принести в жертву качество. Каждый вариант несёт свои риски, которые PM должен явно проговорить с заказчиком.
 
+Каждый угол треугольника операционализирован отдельной областью знаний PMBOK: содержание — [[scope-management]], время — [[schedule-management]], стоимость — [[cost-management]]. Формальный процесс изменения любого из углов после фиксации baseline — [[change-management|Perform Integrated Change Control]].
+
 ## Связанные страницы
 - [[project-vs-process]]
 - [[scope-creep]]
+- [[scope-management]]
+- [[schedule-management]]
+- [[cost-management]]
+- [[change-management]]
 - [[pm-2-main-notions]]
