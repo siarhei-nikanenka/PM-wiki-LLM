@@ -22,12 +22,15 @@
 - [PM 16 — Управление стоимостью проекта](sources/pm-16-cost-management.md) — 4 процесса Project Cost Management, методы оценки стоимости (аналогия, параметрическая, PERT, bottom-up), структура Cost Baseline, резерв на риски, влияние типа контракта на бюджет, Earned Value Management (EVM). Источник: `raw/Lectures Summaries/pm_16 Cost Management.md`, `raw/Slides/PM 16 Cost Management.pptx.pdf`, `raw/Transcriptions/Копия PM 16 Cost Management.txt`
 - [PM 17 — Управление рисками проекта](sources/pm-17-risk-management.md) — уровни зрелости работы с рисками, 7 процессов Project Risk Management, RBS, реестр рисков, качественный/количественный анализ, пять стратегий реагирования. Источник: `raw/Lectures Summaries/pm_17 Risk Management.md`, `raw/Slides/PM 17 Risk Management.pptx.pdf`, `raw/Transcriptions/Копия PM 17 Risk Management.txt`
 
+- [PM 18 — Управление качеством проекта](sources/pm-18-quality-management.md) — TQM и ISO 9000/10006, 3 процесса Project Quality Management, Cost of Quality, цикл Деминга PDCA/PDSA и параллель со Scrum, критерии и метрики качества, тестирование ПО (модели, жизненный цикл, классификации), баг-репорт и матрица Severity/Priority. Источник: `raw/Lectures Summaries/pm_18 Quality Management.md`, `raw/Slides/PM 18 Quality Management.pptx.pdf`, `raw/Transcriptions/Копия PM 18 Quality Management.txt`
+
 ## Entities
 
 - [Sergey Nikonenko](entities/sergey-nikonenko.md) — преподаватель курса, Delivery Manager в Oxagile.
 - [Курс «Управление проектами в IT»](entities/pm-it-course.md) — структура, программа из 20 тем, система оценки.
 - [PMBOK](entities/pmbok.md) — стандарт PMI, версии 6 (процессные группы, 10 областей знаний) и 7 (принципы, performance domains).
 - [Юрген Аппело](entities/jurgen-appelo.md) — автор философии Management 3.0, метафор «садовник систем» и дерево Мартие.
+- [Эдвардс Деминг](entities/edwards-deming.md) — автор цикла PDCA/PDSA, идейный источник TQM и японского скачка качества.
 
 ## Concepts
 
@@ -79,3 +82,8 @@
 - [Управление изменениями](concepts/change-management.md) — Perform Integrated Change Control, Waterfall vs Agile, Change Register/Report, три круга трансформации, сопротивление (Kegan & Lahey, кривая Кюблера-Росса, Force Field Analysis), три роли трансформации.
 - [Project Cost Management](concepts/cost-management.md) — 4 процесса PMBOK 6, методы оценки стоимости, структура Cost Baseline, резерв на риски, влияние типа контракта на бюджет, Earned Value Management.
 - [Project Risk Management](concepts/risk-management.md) — уровни зрелости, 7 процессов PMBOK, RBS, реестр рисков, качественный/количественный анализ, пять стратегий реагирования.
+- [Project Quality Management](concepts/quality-management.md) — 3 процесса PMBOK 6 (Plan/Manage/Control Quality), Cost of Quality, рост цены дефекта, 5 уровней управления качеством, критерии и метрики качества проекта.
+- [Total Quality Management и стандарты качества](concepts/tqm.md) — японские корни TQM, четыре постулата, три уровня создания качества, принципы, ISO 9000 и ISO 10006.
+- [Цикл Деминга: PDCA и PDSA](concepts/pdca.md) — четыре этапа непрерывного улучшения, отличие PDSA (Study вместо Check), параллель со спринтом Scrum.
+- [Тестирование ПО](concepts/software-testing.md) — стратегия тестирования в разных моделях SDLC (включая V-модель), жизненный цикл тестирования из 8 шагов, восемь осей классификации видов тестирования.
+- [Баг-репорт, Severity и Priority](concepts/defect-reporting.md) — структура баг-репорта, различие Severity и Priority, матрица 2×2, градация Critical/Major/Minor/Low в SLA.

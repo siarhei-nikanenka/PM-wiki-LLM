@@ -159,3 +159,35 @@
   - concepts/rfx.md — добавлена явная отсылка к формуле PERT в [[schedule-management]] и [[cost-management]].
   - concepts/iron-triangle.md — добавлен абзац, связывающий три угла треугольника с [[scope-management]]/[[schedule-management]]/[[cost-management]], и ссылка на [[change-management]] как формальный процесс изменения baseline.
   - concepts/scrum.md — добавлена ссылка на [[agile-planning]] (детализация уровней бэклога внутри Scrum-практики).
+
+## 2026-08-17 ingest | PM 18 Quality Management
+Прочитаны все три источника целиком: `raw/Lectures Summaries/pm_18 Quality Management.md`, `raw/Slides/PM 18 Quality Management.pptx.pdf` (37 слайдов), `raw/Transcriptions/Копия PM 18 Quality Management.txt.done` (781 строка).
+Создано:
+- sources: pm-18-quality-management.md
+- concepts: quality-management.md, tqm.md, pdca.md, software-testing.md, defect-reporting.md
+- entities: edwards-deming.md
+Обновлены:
+- concepts/sdlc.md — V-модель связана с [[software-testing]] (соответствие этапов и уровней тестирования); добавлен абзац о зависимости момента вовлечения тестировщиков от модели и о росте цены дефекта.
+- concepts/iron-triangle.md — скрытый параметр «качество» связан с [[quality-management]] и Cost of Quality: экономия на качестве только выглядит экономией.
+- concepts/lean.md — добавлен абзац об общих с [[tqm]] японских корнях и о [[pdca]]/Lean Six Sigma как механизме улучшения.
+- concepts/scrum.md — спринт описан как один оборот [[pdca|цикла Деминга]] (Plan/Do/Check/Act ↔ планирование/выполнение/ревью/ретроспектива).
+- concepts/pmbok-process-groups.md — область знаний «Качество» связана с [[quality-management]].
+- concepts/requirements-quality.md — характеристика «проверяемость» связана с [[software-testing]] и метрикой тестового покрытия.
+- concepts/user-stories-and-use-cases.md — acceptance criteria связаны с приёмочным тестированием.
+- concepts/cost-management.md — добавлен абзац про Cost of Quality как недооцениваемую статью бюджета.
+- concepts/cicd.md — CI связан со smoke-тестами (метрика прохождения 100% на каждом билде).
+- concepts/devops.md — Build→Release связан с видами проверок из [[software-testing]].
+- concepts/xp.md — TDD показан как крайняя точка принципа «строить качество в процессе».
+- entities/pm-it-course.md — тема 13 программы («Управление качеством на проекте») закрыта лекцией 18; тема 17 (Agile-ретроспектива) помечена как частично затронутая через параллель PDCA↔Scrum.
+- overview.md — добавлены абзацы «Качество: скрытый угол треугольника, который раньше упоминался только как буфер» и «Контроль качества на практике: тестирование».
+- index.md — добавлены 1 source, 5 concepts, 1 entity.
+Примечания:
+- TQM вынесен в отдельную страницу concepts/tqm.md, а не слит с quality-management.md: это философия и стандарты (история, ISO 9000/10006, три уровня качества), тогда как quality-management.md — процессная область PMBOK. Та же логика разделения, что management-3-0 / management-3-0-tools.
+- Тестирование разделено на две страницы: software-testing.md (модели, жизненный цикл, 8 осей классификации) и defect-reporting.md (баг-репорт, Severity/Priority) — вторая тема самостоятельна и используется вне контекста тестирования (SLA, контракты, приоритизация беклога дефектов).
+- Слайды PM 18 отдельной source-страницы не получили — упомянуты как источник в sources/pm-18-quality-management.md, как и в предыдущих ingest.
+- Файл транскрипта имеет расширение `.txt.done` (в отличие от остальных транскриптов — просто `.txt`). Раздел raw не трогался; ссылки в вики указывают на фактическое имя файла. Если `.done` — технический маркер пайплайна и файл будет переименован, ссылки в sources/pm-18-quality-management.md и index.md нужно будет поправить.
+- В wiki/ появился неописанный в CLAUDE.md каталог `study-guides/` (материалы к воркшопу PM 17 и подготовке к тесту). В этот ingest не затрагивался и в index.md не вносился — схему слоёв стоит обсудить отдельно.
+
+## 2026-08-17 ingest | PM 18 Quality Management — уточнение по источникам
+Транскрипт переименован пользователем в `raw/Transcriptions/Копия PM 18 Quality Management.txt` (без `.done`); ссылки в sources/pm-18-quality-management.md и index.md приведены к фактическому имени файла.
+Каталог `wiki/study-guides/` по решению пользователя в вики-схему не включается и в index.md не вносится.
