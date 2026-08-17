@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Риск-мастерская — PM 17</title>
+<style>
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181A;
+      --surface: #1C2225;
+      --surface-2: #232A2D;
+      --ink: #ECEEEA;
+      --ink-soft: #9FA8A4;
+      --ink-faint: #6E7773;
+      --accent: #7FC2BC;
+      --accent-ink: #0E1516;
+      --accent-soft: #223231;
+      --line: #333B3E;
+      --low: #7FA487;
+      --med: #D3A155;
+      --high: #C97369;
+      --low-bg: #1E2620;
+      --med-bg: #2B2419;
+      --high-bg: #2C1E1C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181A;
+    --surface: #1C2225;
+    --surface-2: #232A2D;
+    --ink: #ECEEEA;
+    --ink-soft: #9FA8A4;
+    --ink-faint: #6E7773;
+    --accent: #7FC2BC;
+    --accent-ink: #0E1516;
+    --accent-soft: #223231;
+    --line: #333B3E;
+    --low: #7FA487;
+    --med: #D3A155;
+    --high: #C97369;
+    --low-bg: #1E2620;
+    --med-bg: #2B2419;
+    --high-bg: #2C1E1C;
+  }
+  :root {
+    --bg: #F4F3EF;
+    --surface: #FFFFFF;
+    --surface-2: #EBE9E2;
+    --ink: #1B1F1E;
+    --ink-soft: #565F5B;
+    --ink-faint: #8A928E;
+    --accent: #2C5C5E;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #DEE8E7;
+    --line: #DCD9D0;
+    --low: #4F7A57;
+    --med: #A6752B;
+    --high: #A6473F;
+    --low-bg: #E6EEE4;
+    --med-bg: #F3E7D4;
+    --high-bg: #F3DEDB;
+
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  h1.title {
+    font-family: var(--serif);
+    font-size: clamp(34px, 5vw, 50px);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .dek {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .pill {
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--line);
+    font-weight: 600;
+  }
+
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  .section-sub {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    margin: 0 0 18px;
+    max-width: 68ch;
+  }
+
+  /* ---- Process steps ---- */
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .step .num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .step h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .step .time {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .step p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .step ul {
+    margin: 2px 0 0;
+    padding-left: 16px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .step ul li::marker { color: var(--accent); }
+
+  /* ---- RBS + matrix aids ---- */
+  .aid-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .aid-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .aid-card h4 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    font-weight: 700;
+  }
+  .rbs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .rbs-item {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+  }
+  .rbs-item b { display: block; font-size: 13px; margin-bottom: 2px; }
+  .rbs-item span { color: var(--ink-soft); font-size: 12px; }
+
+  .matrix-wrap { display: flex; gap: 14px; align-items: flex-start; }
+  .matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 34px);
+    grid-template-rows: repeat(3, 34px);
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .matrix div {
+    border-radius: 4px;
+  }
+  .m-low { background: var(--low-bg); }
+  .m-med { background: var(--med-bg); }
+  .m-high { background: var(--high-bg); }
+  .matrix-legend {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+  }
+  .matrix-legend .axis { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
+
+  .strategies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .strat {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  /* ---- Case cards ---- */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .case.spare { opacity: 0.82; }
+  .case-band {
+    padding: 6px 20px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-ink);
+  }
+  .band-fp { background: var(--high); }
+  .band-fff { background: var(--med); }
+  .band-tm { background: var(--low); }
+  .band-ded { background: var(--ink-faint); }
+
+  .case-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .case-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .case-head h3 { margin: 0; font-family: var(--serif); font-size: 21px; }
+  .case-group {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .case-overview { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+  .case-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .fact-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); margin-bottom: 3px; }
+  .fact-val { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .case-tech { font-size: 13px; color: var(--ink-soft); }
+  .case-tech b { color: var(--ink); font-weight: 600; }
+  .case-hook {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--accent-soft);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .case-hook b { color: var(--accent); }
+
+  /* ---- Present callout ---- */
+  .present {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .present-q { display: flex; gap: 12px; align-items: flex-start; }
+  .present-q .mark { font-family: var(--serif); font-size: 20px; color: var(--accent); flex-shrink: 0; line-height: 1.3; }
+  .present-q p { margin: 0; font-size: 15px; }
+  .present-q span { color: var(--ink-soft); font-size: 13px; display: block; margin-top: 2px; }
+
+  footer.foot {
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-align: center;
+    font-family: var(--mono);
+  }
+
+  @media (max-width: 760px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+    .aid-row { grid-template-columns: 1fr; }
+    .case-grid { grid-template-columns: 1fr; }
+    .case-facts { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">Управление проектами в IT · Тема 17 — Risk Management</div>
+    <h1 class="title">Риск-мастерская</h1>
+    <p class="dek">Разберите свой кейс через процесс управления рисками PMBOK — от идентификации до выбора стратегии реагирования — и будьте готовы защитить решение перед группой.</p>
+    <div class="meta-row">
+      <span class="pill">⏱ 30–40 минут</span>
+      <span class="pill">👥 группы по 2–3 человека</span>
+      <span class="pill">📁 1 кейс на группу</span>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">Ход работы</h2>
+    <p class="section-sub">Четыре шага. Работайте по своему кейсу — на каждый шаг ориентируйтесь на указанное время.</p>
+    <ol class="steps">
+      <li class="step">
+        <span class="num">Шаг 1</span>
+        <h3>Идентификация</h3>
+        <span class="time">≈ 10 мин</span>
+        <p>Минимум 5 рисков по категориям RBS. Формула: «если [причина] → то [риск] → то [последствие]».</p>
+      </li>
+      <li class="step">
+        <span class="num">Шаг 2</span>
+        <h3>Анализ</h3>
+        <span class="time">≈ 10 мин</span>
+        <p>Расставьте риски на матрице 3×3 (вероятность × воздействие). Выберите топ-3.</p>
+      </li>
+      <li class="step">
+        <span class="num">Шаг 3</span>
+        <h3>Реагирование</h3>
+        <span class="time">≈ 10 мин</span>
+        <p>Для топ-3 рисков — стратегия, ответственный, связь с типом контракта кейса.</p>
+      </li>
+      <li class="step">
+        <span class="num">Шаг 4</span>
+        <h3>Защита</h3>
+        <span class="time">≈ 5–7 мин</span>
+        <p>2–3 минуты на группу. Ответы на три вопроса внизу листа.</p>
+      </li>
+    </ol>
+
+    <div class="aid-row">
+      <div class="aid-card">
+        <h4>RBS — категории для шага 1</h4>
+        <div class="rbs-grid">
+          <div class="rbs-item"><b>Технические</b><span>требования, архитектура, технологии</span></div>
+          <div class="rbs-item"><b>Управленческие</b><span>организация, коммуникации, ресурсы</span></div>
+          <div class="rbs-item"><b>Коммерческие</b><span>договоры, подрядчики, клиент</span></div>
+          <div class="rbs-item"><b>Внешние</b><span>законодательство, экономика, конкуренция</span></div>
+        </div>
+      </div>
+      <div class="aid-card">
+        <h4>Матрица — шаг 2</h4>
+        <div class="matrix-wrap">
+          <div class="matrix">
+            <div class="m-med"></div><div class="m-high"></div><div class="m-high"></div>
+            <div class="m-low"></div><div class="m-med"></div><div class="m-high"></div>
+            <div class="m-low"></div><div class="m-low"></div><div class="m-med"></div>
+          </div>
+          <div class="matrix-legend">
+            <div class="axis">↑ вероятность</div>
+            <div>Приоритет = высокая вероятность × высокое воздействие</div>
+            <div class="axis">воздействие →</div>
+          </div>
+        </div>
+        <h4 style="margin-top:16px">Стратегии — шаг 3</h4>
+        <div class="strategies">
+          <span class="strat">Эскалация</span>
+          <span class="strat">Уклонение</span>
+          <span class="strat">Передача</span>
+          <span class="strat">Снижение</span>
+          <span class="strat">Принятие</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Кейсы</h2>
+    <p class="section-sub">Каждый кейс — реальный тип контракта из курса. Обратите внимание на цветную полосу вверху карточки: она подсказывает, на чьей стороне лежат риски по контракту.</p>
+
+    <div class="case-grid">
+
+      <article class="case">
+        <div class="case-band band-fp">Fixed Price — риски на исполнителе</div>
+        <div class="case-body">
+          <div class="case-head">
+            <h3>Consero</h3>
+            <span class="case-group">Группа A</span>
+          </div>
+          <p class="case-overview">Организатор закрытых конференций для топ-менеджеров. Хочет заменить бумажные брошюры мобильным приложением с авторизацией, расписанием и личным маршрутом гостя.</p>
+          <div class="case-facts">
+            <div><div class="fact-label">Контракт</div><div class="fact-val">Fixed Price</div></div>
+            <div><div class="fact-label">Оценка</div><div class="fact-val">600 ч</div></div>
+            <div><div class="fact-label">Срок</div><div class="fact-val">в контракте</div></div>
+          </div>
+          <p class="case-tech"><b>Технологии:</b> iOS-приложение, сервер на Salesforce (чужая платформа заказчика), API строит backend-команда.</p>
+          <p class="case-hook"><b>Затравка:</b> зависимость от Salesforce-архитектуры, которую пишет не ваша команда, — и фиксированная цена. Что если API придёт с опозданием или не так, как ожидалось?</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-band band-fff">Fixed time / Fixed budget / Flex scope</div>
+        <div class="case-body">
+          <div class="case-head">
+            <h3>AF Gruppen</h3>
+            <span class="case-group">Группа B</span>
+          </div>
+          <p class="case-overview">Строительный холдинг в Норвегии переводит HR, управление проектами и работу водителей/контролёров из Excel в единую ERP-систему.</p>
+          <div class="case-facts">
+            <div><div class="fact-label">Контракт</div><div class="fact-val">FFF</div></div>
+            <div><div class="fact-label">Оценка</div><div class="fact-val">12 000 ч</div></div>
+            <div><div class="fact-label">Срок</div><div class="fact-val">8 мес.</div></div>
+          </div>
+          <p class="case-tech"><b>Технологии:</b> ERP на PHP + React, мобильные приложения iOS/Android для трёх ролей (Basic, Driver, Controller).</p>
+          <p class="case-hook"><b>Затравка:</b> три независимых направления, четыре стейкхолдера с разными приоритетами, объём — единственный изменяемый параметр. Что урежете первым, если не успеваете?</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-band band-tm">Time &amp; Materials — риски на клиенте</div>
+        <div class="case-body">
+          <div class="case-head">
+            <h3>Archery Game</h3>
+            <span class="case-group">Группа C</span>
+          </div>
+          <p class="case-overview">Владелец розничной сети в Крыму запускает мобильную игру-шутер для продвижения бренда, с прицелом на PlayStation и Xbox.</p>
+          <div class="case-facts">
+            <div><div class="fact-label">Контракт</div><div class="fact-val">T&amp;M</div></div>
+            <div><div class="fact-label">Оценка</div><div class="fact-val">50 000 ч</div></div>
+            <div><div class="fact-label">Срок</div><div class="fact-val">6 мес. до релиза</div></div>
+          </div>
+          <p class="case-tech"><b>Технологии:</b> Unity 3D (C#) для мультиплатформенной сборки; нужны геймдизайнер и 3D-модельеры — новых для команды роли.</p>
+          <p class="case-hook"><b>Затравка:</b> непрофильный заказчик выходит в новую для себя индустрию, огромный объём часов, команда с ролями, которых раньше не было в проекте.</p>
+        </div>
+      </article>
+
+      <article class="case spare">
+        <div class="case-band band-ded">Dedicated Team / Support SLA</div>
+        <div class="case-body">
+          <div class="case-head">
+            <h3>Universal Pictures</h3>
+            <span class="case-group">Кейс 4 · запасной</span>
+          </div>
+          <p class="case-overview">Поддержка и доработка Room Booking — приложения для бронирования гримёрок на съёмочной площадке, сделанного 2 года назад.</p>
+          <div class="case-facts">
+            <div><div class="fact-label">Контракт</div><div class="fact-val">Dedicated</div></div>
+            <div><div class="fact-label">Оценка</div><div class="fact-val">1 000 ч</div></div>
+            <div><div class="fact-label">Срок</div><div class="fact-val">6 мес., 4 ч/день</div></div>
+          </div>
+          <p class="case-tech"><b>Технологии:</b> легаси iOS-приложение (таргет — iOS 9), веб-панель, backend на PHP.</p>
+          <p class="case-hook"><b>Затравка:</b> старая кодовая база, частичная занятость команды, минимальные резервы по контракту. Что стареет быстрее — код или люди, которые его помнят?</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="present">
+    <h2 class="section-title" style="margin-bottom:2px">Готовьтесь ответить</h2>
+    <p class="section-sub" style="margin-bottom:4px">По 2–3 минуты на группу.</p>
+    <div class="present-q">
+      <span class="mark">1</span>
+      <p>Какой риск в вашем кейсе главный — и почему именно он, а не другой из топ-3?<span>Обоснуйте местом в матрице вероятность × воздействие.</span></p>
+    </div>
+    <div class="present-q">
+      <span class="mark">2</span>
+      <p>Что может «убить» проект целиком?<span>Не любой риск — тот, что срывает весь контракт или отношения с заказчиком.</span></p>
+    </div>
+    <div class="present-q">
+      <span class="mark">3</span>
+      <p>Как тип контракта вашего кейса изменил выбор стратегии?<span>Сравните: тот же риск в Fixed Price и в T&amp;M потребовал бы разного ответа.</span></p>
+    </div>
+  </section>
+
+  <footer class="foot">wiki/concepts/risk-management.md · wiki/concepts/contract-types.md — PM 17, Risk Management</footer>
+
+</div>
+
+</body>
+</html>
