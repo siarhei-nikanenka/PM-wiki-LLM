@@ -1,0 +1,531 @@
+<title>TechHub Demo</title>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --bg-raised: #ffffff;
+    --bg-sunken: #eeece4;
+    --ink: #1e1f23;
+    --ink-dim: #5c5d60;
+    --border: #ddd9cf;
+    --accent: #2f6f6b;
+    --accent-ink: #ffffff;
+    --accent-soft: #e3efed;
+    --coral: #d97757;
+    --danger: #b3432e;
+    --focus: #2f6f6b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15161a;
+      --bg-raised: #1d1f24;
+      --bg-sunken: #101114;
+      --ink: #e9e7e1;
+      --ink-dim: #a3a29c;
+      --border: #33353b;
+      --accent: #5aa8a2;
+      --accent-ink: #0d1512;
+      --accent-soft: #1d2b29;
+      --coral: #e2916f;
+      --danger: #e0796a;
+      --focus: #5aa8a2;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15161a;
+    --bg-raised: #1d1f24;
+    --bg-sunken: #101114;
+    --ink: #e9e7e1;
+    --ink-dim: #a3a29c;
+    --border: #33353b;
+    --accent: #5aa8a2;
+    --accent-ink: #0d1512;
+    --accent-soft: #1d2b29;
+    --coral: #e2916f;
+    --danger: #e0796a;
+    --focus: #5aa8a2;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: var(--accent); }
+  h1, h2, h3 { text-wrap: balance; margin: 0 0 .4em; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; max-width: 1080px; margin: 0 auto; gap: 16px;
+  }
+  .logo { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .logo span { color: var(--accent); }
+  nav.main { display: flex; gap: 22px; font-size: .92rem; }
+  nav.main a { text-decoration: none; color: var(--ink-dim); }
+  nav.main a:hover { color: var(--ink); }
+  .cart-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--bg-sunken); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; cursor: pointer;
+    font-size: .9rem; color: var(--ink);
+  }
+  .cart-count {
+    background: var(--accent); color: var(--accent-ink);
+    border-radius: 999px; min-width: 20px; height: 20px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: .72rem; padding: 0 5px; font-weight: 700;
+  }
+
+  .hero { padding: 48px 0 28px; }
+  .hero p.eyebrow {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem;
+    color: var(--accent); font-weight: 700; margin: 0 0 8px;
+  }
+  .hero h1 { font-size: 1.9rem; max-width: 32ch; }
+  .hero p.sub { color: var(--ink-dim); max-width: 56ch; }
+
+  .search-row { display: flex; gap: 10px; margin: 18px 0 8px; }
+  .search-row input {
+    flex: 1; max-width: 360px;
+  }
+
+  section { padding: 34px 0; border-top: 1px solid var(--border); }
+  section:first-of-type { border-top: none; }
+  section > h2 { font-size: 1.25rem; margin-bottom: 4px; }
+  section > p.section-sub { color: var(--ink-dim); font-size: .92rem; margin: 0 0 20px; }
+
+  .grid-products {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  @media (max-width: 720px) {
+    .grid-products { grid-template-columns: repeat(2, 1fr); }
+  }
+  .card {
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;
+  }
+  .card .thumb {
+    height: 110px; display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+  }
+  .card .body { padding: 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card .name { font-weight: 600; font-size: .95rem; }
+  .card .price { color: var(--accent); font-weight: 700; }
+  .card .desc { color: var(--ink-dim); font-size: .82rem; flex: 1; }
+
+  button {
+    font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid transparent;
+  }
+  button:focus-visible, input:focus-visible, a:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 2px;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--accent-ink); border: none;
+    padding: 9px 16px; font-weight: 600; font-size: .88rem;
+  }
+  .btn-primary:hover { filter: brightness(1.06); }
+  .btn-ghost {
+    background: transparent; color: var(--ink); border: 1px solid var(--border);
+    padding: 8px 14px; font-size: .85rem;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea {
+    width: 100%; padding: 9px 11px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg-sunken);
+    color: var(--ink); font: inherit; font-size: .9rem;
+  }
+  label { font-size: .84rem; color: var(--ink-dim); display: block; margin-bottom: 4px; }
+  .field { margin-bottom: 14px; }
+
+  .form-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 680px) {
+    .form-cols { grid-template-columns: 1fr; }
+  }
+  .form-card {
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px;
+  }
+  .form-card h3 { font-size: 1.02rem; }
+
+  .pw-row { position: relative; }
+  .pw-toggle {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; font-size: 1rem; padding: 4px;
+  }
+
+  .checkbox-row { display: flex; align-items: center; gap: 6px; margin: 10px 0 16px; font-size: .86rem; }
+
+  .msg { font-size: .85rem; padding: 8px 10px; border-radius: 8px; margin-top: 10px; display: none; }
+  .msg.ok { background: var(--accent-soft); color: var(--accent); display: block; }
+
+  /* contact form's submit button was restyled separately from the design system */
+  .btn-contact-submit {
+    background: #3ba15c; color: #ffffff; border: none;
+    padding: 10px 18px; font-weight: 700; font-size: .88rem; border-radius: 3px;
+  }
+
+  aside#cart-panel {
+    position: fixed; top: 0; right: 0; height: 100%; width: 340px; max-width: 88vw;
+    background: var(--bg-raised); border-left: 1px solid var(--border);
+    transform: translateX(100%); transition: transform .22s ease;
+    z-index: 30; display: flex; flex-direction: column; padding: 20px;
+  }
+  aside#cart-panel.open { transform: translateX(0); }
+  .cart-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 25;
+    display: none;
+  }
+  .cart-overlay.open { display: block; }
+  .cart-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid var(--border); gap: 8px;
+  }
+  .cart-item .ci-name { font-size: .88rem; flex: 1; }
+  .qty-controls { display: flex; align-items: center; gap: 6px; }
+  .qty-controls button {
+    width: 24px; height: 24px; background: var(--bg-sunken); border: 1px solid var(--border);
+    font-size: .9rem; line-height: 1;
+  }
+  .cart-total-row {
+    display: flex; justify-content: space-between; font-weight: 700;
+    padding-top: 14px; margin-top: auto; border-top: 1px solid var(--border);
+  }
+
+  footer.site {
+    /* fixed-width flex row with no wrapping: overlaps on narrow viewports */
+    background: var(--bg-sunken); border-top: 1px solid var(--border);
+    padding: 30px 0;
+  }
+  .footer-row {
+    display: flex; flex-wrap: nowrap; gap: 40px; max-width: 1080px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-col { width: 260px; flex-shrink: 0; }
+  .footer-col h4 { font-size: .82rem; margin: 0 0 8px; }
+  .footer-col p, .footer-col a { font-size: .82rem; color: var(--ink-dim); display: block; text-decoration: none; margin-bottom: 4px; }
+  .footer-bottom { text-align: center; font-size: .78rem; color: var(--ink-dim); margin-top: 24px; }
+</style>
+
+<header class="site">
+  <div class="topbar">
+    <div class="logo">Tech<span>Hub</span></div>
+    <nav class="main">
+      <a href="#catalog">Каталог</a>
+      <a href="#account">Аккаунт</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <button class="cart-btn" id="cart-toggle" onclick="toggleCart()">
+      🛒 Корзина <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Демо-магазин для учебного задания</p>
+    <h1>TechHub — витрина гаджетов</h1>
+    <p class="sub">Учебный сайт для практики по управлению качеством. Пройдите путь пользователя — поиск, корзина, регистрация, вход — и зафиксируйте найденные дефекты как тикеты в Jira.</p>
+  </div>
+</div>
+
+<section id="catalog">
+  <div class="wrap">
+    <h2>Каталог</h2>
+    <p class="section-sub">6 товаров. Найдите нужный через поиск или пролистайте вручную.</p>
+    <div class="search-row">
+      <input type="text" id="search-input" placeholder="Поиск по названию…" oninput="renderProducts()">
+    </div>
+    <div class="grid-products" id="product-grid"></div>
+  </div>
+</section>
+
+<section id="account">
+  <div class="wrap">
+    <h2>Аккаунт</h2>
+    <p class="section-sub">Создайте аккаунт или войдите в существующий.</p>
+    <div class="form-cols">
+      <div class="form-card">
+        <h3>Регистрация</h3>
+        <form id="register-form" onsubmit="return submitRegister(event)">
+          <div class="field">
+            <label for="reg-name">Имя</label>
+            <input type="text" id="reg-name" required>
+          </div>
+          <div class="field">
+            <label for="reg-email">Электронная почта</label>
+            <input type="email" id="reg-email" required>
+          </div>
+          <div class="field">
+            <label for="reg-phone">Телефон</label>
+            <input type="text" id="reg-phone" placeholder="+375 29 000-00-00">
+          </div>
+          <div class="field">
+            <label for="reg-pass">Пароль</label>
+            <div class="pw-row">
+              <input type="password" id="reg-pass" required>
+              <button type="button" class="pw-toggle" onclick="togglePw('reg-pass','reg-pass-eye')" id="reg-pass-eye">👁</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="reg-pass2">Подтвержение пароля</label>
+            <div class="pw-row">
+              <input type="password" id="reg-pass2" required>
+              <button type="button" class="pw-toggle" onclick="togglePw('reg-pass2','reg-pass2-eye')" id="reg-pass2-eye">👁</button>
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="reg-terms" required>
+            <label for="reg-terms" style="margin:0">Я согласен с условиями использования</label>
+          </div>
+          <button type="submit" class="btn-primary">Зарегистрироваться</button>
+          <div class="msg" id="register-msg">Регистрация прошла успешно! Добро пожаловать.</div>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Вход</h3>
+        <form id="login-form" onsubmit="return submitLogin(event)">
+          <div class="field">
+            <label for="login-email">Электронная почта</label>
+            <input type="email" id="login-email">
+          </div>
+          <div class="field">
+            <label for="login-pass">Пароль</label>
+            <div class="pw-row">
+              <input type="password" id="login-pass">
+              <button type="button" class="pw-toggle" onclick="togglePw('login-pass','login-pass-eye')" id="login-pass-eye">👁</button>
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="login-remember">
+            <span>Запомнить меня</span>
+          </div>
+          <button type="submit" class="btn-primary">Войти</button>
+          <div class="msg" id="login-msg">Вход выполнен успешно!</div>
+          <p style="margin-top:14px"><a href="#">Забыли пароль?</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Контакты и подписка</h2>
+    <p class="section-sub">Подпишитесь на новости или отправьте нам сообщение.</p>
+    <div class="form-cols">
+      <div class="form-card">
+        <h3>Рассылка</h3>
+        <form id="newsletter-form" onsubmit="return submitNewsletter(event)">
+          <div class="field">
+            <label for="news-email">Электронная почта</label>
+            <input type="text" id="news-email" placeholder="you@example.com">
+          </div>
+          <button type="submit" class="btn-primary">Подписаться</button>
+          <div class="msg" id="newsletter-msg">Спасибо за подписку!</div>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Обратная связь</h3>
+        <form id="feedback-form" onsubmit="return submitFeedback(event)">
+          <div class="field">
+            <label for="fb-name">Имя</label>
+            <input type="text" id="fb-name" required>
+          </div>
+          <div class="field">
+            <label for="fb-email">Электронная почта</label>
+            <input type="email" id="fb-email" required>
+          </div>
+          <div class="field">
+            <label for="fb-msg">Сообщение</label>
+            <textarea id="fb-msg" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn-contact-submit">Отправить</button>
+          <div class="msg" id="feedback-msg">Сообщение отправлено. Мы свяжемся с вами!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<aside id="cart-panel">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+    <h3 style="margin:0">Корзина</h3>
+    <button class="btn-ghost" onclick="toggleCart()">Закрыть</button>
+  </div>
+  <div id="cart-items" style="flex:1; overflow-y:auto;"></div>
+  <div class="cart-total-row">
+    <span>Итого</span>
+    <span class="num" id="cart-total">0 BYN</span>
+  </div>
+  <button class="btn-primary" style="margin-top:14px" onclick="checkout()">Оформить заказ</button>
+</aside>
+
+<footer class="site">
+  <div class="footer-row">
+    <div class="footer-col">
+      <h4>TechHub</h4>
+      <p>Учебная витрина гаджетов для курса по управлению проектами.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Каталог</h4>
+      <a href="#catalog">Все товары</a>
+      <a href="#catalog">Новинки</a>
+      <a href="#catalog">Аксессуары</a>
+    </div>
+    <div class="footer-col">
+      <h4>Поддержка</h4>
+      <a href="#contact">Связаться с нами</a>
+      <a href="#account">Мой аккаунт</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2022 TechHub. Все права защищены.</div>
+</footer>
+
+<script>
+  const PRODUCTS = [
+    { id: 1, name: "Беспроводные наушники Aira", price: 89, emoji: "🎧", desc: "До 30 часов автономной работы, шумоподавление." },
+    { id: 2, name: "Чехол для смартфона Slim", price: 15, emoji: "📱", desc: "Ударопрочный силиконовый чехол." },
+    { id: 3, name: "Powerbank 10000 мАч", price: 32, emoji: "🔋", desc: "Быстрая зарядка, компактный корпус." },
+    { id: 4, name: "Смарт-часы Pulse", price: 149, emoji: "⌚", desc: "Пульсометр, уведомления, 7 дней автономности." },
+    { id: 5, name: "Bluetooth-колонка Wave", price: 54, emoji: "🔊", desc: "Влагозащита IPX7, звук 360°." },
+    { id: 6, name: "Зарядное устройство GaN 65W", price: 27, emoji: "🔌", desc: "Компактное быстрое зарядное на 2 порта." },
+  ];
+
+  let cart = []; // { id, qty }
+
+  function renderProducts() {
+    const query = document.getElementById("search-input").value;
+    const grid = document.getElementById("product-grid");
+    grid.innerHTML = "";
+    PRODUCTS.filter(p => p.name.includes(query)).forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="thumb">${p.emoji}</div>
+        <div class="body">
+          <div class="name">${p.name}</div>
+          <div class="desc">${p.desc}</div>
+          <div class="price num">${p.price} BYN</div>
+          <button class="btn-primary" onclick="${p.id === 3 ? `addTocart(${p.id})` : `addToCart(${p.id})`}">Добавить в корзину</button>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  function addToCart(id) {
+    const existing = cart.find(c => c.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id, qty: 1 });
+    }
+    renderCart();
+  }
+
+  function changeQty(id, delta) {
+    const item = cart.find(c => c.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      cart = cart.filter(c => c.id !== id);
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    const list = document.getElementById("cart-items");
+    const countEl = document.getElementById("cart-count");
+    const totalEl = document.getElementById("cart-total");
+    list.innerHTML = "";
+    let count = 0;
+    let total = 0;
+    cart.forEach(item => {
+      const product = PRODUCTS.find(p => p.id === item.id);
+      count += item.qty;
+      total += product.price; // grand total does not account for quantity
+      const row = document.createElement("div");
+      row.className = "cart-item";
+      row.innerHTML = `
+        <span class="ci-name">${product.emoji} ${product.name}</span>
+        <div class="qty-controls">
+          <button onclick="changeQty(${item.id}, -1)">−</button>
+          <span class="num">${item.qty}</span>
+          <button onclick="changeQty(${item.id}, 1)">+</button>
+        </div>`;
+      list.appendChild(row);
+    });
+    countEl.textContent = count;
+    totalEl.textContent = total + " BYN";
+  }
+
+  function toggleCart() {
+    document.getElementById("cart-panel").classList.toggle("open");
+    document.getElementById("cart-overlay").classList.toggle("open");
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Корзина пуста.");
+      return;
+    }
+    alert("Заказ оформлен! Спасибо за покупку.");
+    cart = [];
+    renderCart();
+    toggleCart();
+  }
+
+  function togglePw(inputId, btnId) {
+    const input = document.getElementById(inputId);
+    input.type = input.type === "password" ? "text" : "password";
+    // icon intentionally left as-is
+  }
+
+  const EMAIL_REGEX = /^\S+@\S+$/;
+
+  function submitRegister(e) {
+    e.preventDefault();
+    const email = document.getElementById("reg-email").value;
+    const pass = document.getElementById("reg-pass").value;
+    if (!EMAIL_REGEX.test(email)) {
+      alert("Введите корректный email");
+      return false;
+    }
+    if (pass.length > 0) {
+      document.getElementById("register-msg").classList.add("ok");
+    }
+    return false;
+  }
+
+  function submitLogin(e) {
+    e.preventDefault();
+    document.getElementById("login-msg").classList.add("ok");
+    return false;
+  }
+
+  function submitNewsletter(e) {
+    e.preventDefault();
+    document.getElementById("newsletter-msg").classList.add("ok");
+    return false;
+  }
+
+  function submitFeedback(e) {
+    e.preventDefault();
+    document.getElementById("feedback-msg").classList.add("ok");
+    e.target.reset();
+    return false;
+  }
+
+  renderProducts();
+  renderCart();
+</script>
