@@ -45,7 +45,7 @@ title: Scrum
 PO активно участвует и даёт регулярную обратную связь; продукт можно поставлять частями с новой ценностью для бизнеса каждый раз; высокая вероятность изменений, и клиент к ним готов; тип контракта — Time & Materials или Dedicated Team (см. [[contract-types]]).
 
 ## Scrum и PMBOK
-События Scrum зеркалят процессные группы PMBOK 6 (Sprint Planning ≈ Планирование, реализация задач/Daily Scrum ≈ Исполнение, Sprint Review ≈ Мониторинг) — подробнее в [[pmbok-process-groups]]. Sprint Review, Retrospective, Daily Scrum и Sprint Planning также образуют цикл накопления и передачи знаний команды — см. [[knowledge-management]].
+События Scrum зеркалят процессные группы PMBOK 6 (Sprint Planning ≈ Планирование, реализация задач/Daily Scrum ≈ Исполнение, Sprint Review ≈ Мониторинг) — подробнее в [[pmbok-process-groups]]. Тот же спринт читается и как один оборот [[pdca|цикла Деминга]]: Plan ≈ планирование спринта, Do ≈ выполнение задач, Check ≈ Sprint Review, Act ≈ Retrospective и обновление бэклога — то есть Scrum является практической реализацией философии непрерывного улучшения из [[tqm]]. Sprint Review, Retrospective, Daily Scrum и Sprint Planning также образуют цикл накопления и передачи знаний команды — см. [[knowledge-management]].
 
 ## Связанные страницы
 - [[pm-4-agile-methodologies]]
@@ -59,3 +59,4 @@ PO активно участвует и даёт регулярную обрат
 - [[scaling-frameworks]]
 - [[pmbok-process-groups]]
 - [[knowledge-management]]
+- [[pdca]]

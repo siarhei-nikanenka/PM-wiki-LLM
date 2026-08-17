@@ -21,11 +21,11 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 10. Настройка процессов на проекте
 11. Управление коммуникациями проекта
 12. Техническое задание. Работа с требованиями ([[scope-management]], [[requirements-types]], [[requirements-elicitation]], [[requirements-modeling]], [[srs-and-tz]]) — [[pm-10-scope-management]], [[pm-11-requirements-documentation]]; лекция [[pm-12-schedule-management|PM 12]] по номеру идёт следом, но по содержанию не относится к этой теме программы — она про управление расписанием (см. пункт 5)
-13. Управление качеством на проекте
+13. Управление качеством на проекте — [[pm-18-quality-management]] (см. [[quality-management]], [[tqm]], [[software-testing]]); лекция 18 закрывает тему 13 программы
 14. Управление рисками — [[pm-17-risk-management]] (см. [[risk-management]]); также лекция [[pm-13-agile-planning|PM 13]] про Agile-планирование (бэклог, оценка, Velocity, WSJF) не имеет точного соответствия в программе из 20 тем — ближе всего к теме 3 (гибкие методологии) или теме 5 (план проекта)
 15. Управление мотивацией команды проекта ([[management-3-0]], [[management-3-0-tools]]) — [[pm-15-management-3-0]]; номер лекции совпадает с номером темы программы, редкий случай для этого курса
 16. Управление изменениями — [[pm-14-change-management]] (см. [[change-management]]); лекция 14 закрывает тему 16 программы
-17. Agile-ретроспектива
+17. Agile-ретроспектива — частично затронуто в [[pm-18-quality-management]] через параллель [[pdca|цикла Деминга]] и Scrum (ретроспектива как шаг Act)
 18. Процессы завершения проекта — уже частично затронуто в [[pm-9-project-integration]] ([[project-closure]]), опережая порядковый номер темы в программе
 19. Экзаменационный тест
 20. Презентация проектов
@@ -33,4 +33,4 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 ## Оценка
 50% — средний балл промежуточных и финального тестов, 50% — защита учебного проекта (накопленный пакет ДЗ на придуманный продукт, презентация 15–20 минут). Сертификат: «Successfully Completed» при среднем балле ≥7, иначе «Completed».
 
-**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]], [[pm-10-scope-management]], [[pm-11-requirements-documentation]], [[pm-12-schedule-management]], [[pm-13-agile-planning]], [[pm-14-change-management]], [[pm-15-management-3-0]], [[pm-16-cost-management]], [[pm-17-risk-management]]
+**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]], [[pm-10-scope-management]], [[pm-11-requirements-documentation]], [[pm-12-schedule-management]], [[pm-13-agile-planning]], [[pm-14-change-management]], [[pm-15-management-3-0]], [[pm-16-cost-management]], [[pm-17-risk-management]], [[pm-18-quality-management]]

@@ -32,7 +32,7 @@ Plan → Code → Build → Test → Release → Deploy → Operate → Monitor 
 ## Build vs Release
 
 - **Build** — собранное приложение, переданное командой разработки команде тестирования. Один релизный цикл может включать несколько build.
-- **Release** — официальный выпуск для конечных пользователей. Build становится Release только после тестирования и сертификации командой QA.
+- **Release** — официальный выпуск для конечных пользователей. Build становится Release только после тестирования и сертификации командой QA (какие именно проверки проходит билд — см. [[software-testing]]).
 
 > Пример: за два дня создали 5 build. Build №3 — критичный баг в оплате, №4 — мелкие баги, №5 прошёл все тесты. Release = build №5.
 
@@ -78,4 +78,5 @@ Deployment Management — это лишь шаг 6 внутри Release Manageme
 - [[sdlc]] — этапы SDLC, связь с DevOps
 - [[cicd]] — CI/CD как часть DevOps (этапы Build/Test/Release/Deploy)
 - [[version-control]] — Code-этап DevOps
+- [[software-testing]] — Test-этап цикла: виды тестов, отчётность как основа решения о релизе
 - [[pm-6-sdlc]]
