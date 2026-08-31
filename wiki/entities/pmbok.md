@@ -23,6 +23,8 @@ title: PMBOK
 - [[pmbok-process-groups]]
 - [[project-charter]]
 - [[stakeholders]]
+- [[communications-management]]
+- [[resource-management]]
 - [[wbs]]
 - [[pm-it-course]]
 

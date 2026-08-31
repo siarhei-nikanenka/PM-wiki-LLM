@@ -100,6 +100,7 @@ title: Тестирование ПО: модели, жизненный цикл,
 ## Связанные страницы
 - [[quality-management]]
 - [[defect-reporting]]
+- [[flow-metrics]]
 - [[sdlc]]
 - [[waterfall]]
 - [[agile]]

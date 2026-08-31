@@ -59,4 +59,6 @@ PO активно участвует и даёт регулярную обрат
 - [[scaling-frameworks]]
 - [[pmbok-process-groups]]
 - [[knowledge-management]]
+- [[project-reports]]
+- [[burndown-burnup-charts]]
 - [[pdca]]

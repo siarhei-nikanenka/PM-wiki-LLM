@@ -23,6 +23,10 @@
 - [PM 17 — Управление рисками проекта](sources/pm-17-risk-management.md) — уровни зрелости работы с рисками, 7 процессов Project Risk Management, RBS, реестр рисков, качественный/количественный анализ, пять стратегий реагирования. Источник: `raw/Lectures Summaries/pm_17 Risk Management.md`, `raw/Slides/PM 17 Risk Management.pptx.pdf`, `raw/Transcriptions/Копия PM 17 Risk Management.txt`
 
 - [PM 18 — Управление качеством проекта](sources/pm-18-quality-management.md) — TQM и ISO 9000/10006, 3 процесса Project Quality Management, Cost of Quality, цикл Деминга PDCA/PDSA и параллель со Scrum, критерии и метрики качества, тестирование ПО (модели, жизненный цикл, классификации), баг-репорт и матрица Severity/Priority. Источник: `raw/Lectures Summaries/pm_18 Quality Management.md`, `raw/Slides/PM 18 Quality Management.pptx.pdf`, `raw/Transcriptions/Копия PM 18 Quality Management.txt`
+- [PM 19 — Лидерство и мотивация команды. Часть 1](sources/pm-19-leadership-motivation-1.md) — власть руководителя как «меч» и делегирование, активация/стимуляция/мотивация, виды мотивации, пирамида потребностей и пять уровней вовлечённости, теория справедливости Адамса, one-on-one и pulse-опрос, методика Moving Motivators, выгорание, модель «песочницы». Источник: `raw/Lectures Summaries/pm_19 Leadership Team motivation. Part 1.md`, `raw/Slides/PM 19 Leadership and Team Motivation. Part 1.pptx.pdf`, `raw/Transcriptions/Копия PM 19 Leadership and Team Motivation. Part 1.txt`
+- [PM 20 — Отчёты](sources/pm-20-reports.md) — отчёт как целевое сообщение, три аудитории и четыре типа отчётов, Sprint Report в Confluence, burndown (9 паттернов), burnup, velocity chart, control chart, cycle time by month, CFD, dashboard, report checklist, частые ошибки, коврлетр vs executive summary. Источник: `raw/Lectures Summaries/pm_20 Reports.md`, `raw/Slides/PM 20 Reports.pptx.pdf`, `raw/Transcriptions/Копия PM 20 Reports.txt`
+- [PM 23 — Лидерство и мотивация команды. Часть 2](sources/pm-23-leadership-motivation-2.md) — роль PM за пределами процессов: треугольник Карпмана и модель Бауэра, ситуационное лидерство Херси–Бланшара (S1–S4 × D1–D4), модель Такмана и «мамонт», четыре уха Шульца фон Туна, one-way/two-way и формальная/неформальная коммуникация, распределённые команды, эмоциональный интеллект. Источник: `raw/Lectures Summaries/pm_23 Leadership Team motivation. Part 2.md`, `raw/Slides/PM 23 Leadership and Team Motivation. Part 2.pptx.pdf`, `raw/Transcriptions/Копия PM 23 Leadership and Team Motivation. Part 2.txt`
+- [PM 24 — Управление коммуникациями и ресурсами проекта](sources/pm-24-communications-and-resources.md) — 3 процесса Project Communications Management, план и матрица коммуникаций, трёхуровневая эскалация, 6 процессов Project Resource Management, материальные ресурсы vs люди, критерии выбора ресурса, OBS/RAM/RACI, Develop Team, современные тенденции. Источник: `raw/Lectures Summaries/pm_24 Communication and Resources Management.md`, `raw/Slides/PM 24 Communication management + Resource Management.pptx.pdf`, `raw/Transcriptions/Копия PM 24 Communication management + Resource Management.txt`
 
 ## Entities
 
@@ -31,6 +35,11 @@
 - [PMBOK](entities/pmbok.md) — стандарт PMI, версии 6 (процессные группы, 10 областей знаний) и 7 (принципы, performance domains).
 - [Юрген Аппело](entities/jurgen-appelo.md) — автор философии Management 3.0, метафор «садовник систем» и дерево Мартие.
 - [Эдвардс Деминг](entities/edwards-deming.md) — автор цикла PDCA/PDSA, идейный источник TQM и японского скачка качества.
+- [Абрахам Маслоу](entities/abraham-maslow.md) — автор иерархии потребностей; в лекции пирамида подана как система, по которой человек постоянно перемещается, а не как лестница.
+- [Джон Стейси Адамс](entities/john-stacey-adams.md) — автор теории справедливости: люди сравнивают не деньги, а справедливость.
+- [Стивен Карпман](entities/stephen-karpman.md) — автор драматического треугольника (жертва/преследователь/спасатель), 1968.
+- [Брюс Такман](entities/bruce-tuckman.md) — автор модели стадий развития команды forming → storming → norming → performing → adjourning.
+- [Дэниел Гоулман](entities/daniel-goleman.md) — автор книги «Эмоциональный интеллект», описал амигдалу и эмоциональный захват.
 
 ## Concepts
 
@@ -87,3 +96,24 @@
 - [Цикл Деминга: PDCA и PDSA](concepts/pdca.md) — четыре этапа непрерывного улучшения, отличие PDSA (Study вместо Check), параллель со спринтом Scrum.
 - [Тестирование ПО](concepts/software-testing.md) — стратегия тестирования в разных моделях SDLC (включая V-модель), жизненный цикл тестирования из 8 шагов, восемь осей классификации видов тестирования.
 - [Баг-репорт, Severity и Priority](concepts/defect-reporting.md) — структура баг-репорта, различие Severity и Priority, матрица 2×2, градация Critical/Major/Minor/Low в SLA.
+- [Власть руководителя: метафора меча](concepts/leadership-power.md) — четыре вопроса владения властью, делегирование как передача и возврат меча, правила применения и контроль.
+- [Мотивация команды](concepts/motivation.md) — активация/стимуляция/мотивация, мотивирование vs стимулирование, виды мотивации, модель «песочницы» (интересно × нужно), пять универсальных принципов.
+- [Теории мотивации](concepts/motivation-theories.md) — пирамида потребностей Маслоу, пять уровней вовлечённости (survival → self-actualization), теория справедливости Адамса, почему деньги не чинят мотивацию, список прочих теорий.
+- [One-on-one и pulse-опрос](concepts/one-on-one.md) — пять правил 1:1, список вопросов, happiness-опрос по четырём направлениям и почему пункт «менеджер» самый чувствительный.
+- [Выгорание](concepts/burnout.md) — четыре симптома, восемь причин, пять направлений восстановления.
+- [Отчёты по проекту](concepts/project-reports.md) — три вопроса до создания отчёта, что показывать и чего не показывать каждой из трёх аудиторий, типы отчётов, Sprint Report, report checklist с примерами, таблица типичных ошибок, коврлетр vs executive summary.
+- [Burndown, burnup и velocity chart](concepts/burndown-burnup-charts.md) — девять паттернов burndown с причинами и реакцией PM, отличие burnup и психология восприятия, ограничения velocity chart, гаджеты dashboard и принцип «один график — один вопрос».
+- [Метрики потока](concepts/flow-metrics.md) — cycle time, lead time, wasted time, WIP, throughput, effectiveness, закон Литтла; control chart, cycle time by month и план наведения порядка, Cumulative Flow Diagram и чтение формы слоёв.
+- [Конфликты: треугольник Карпмана и модель Бауэра](concepts/conflict-management.md) — три роли конфликта, почему PM попадает в «спасателя», четыре шага выхода (факты → эмпатия → план → ценность) с разбором кейса.
+- [Ситуационное лидерство (Херси — Бланшар)](concepts/situational-leadership.md) — четыре стиля S1–S4, четыре уровня развития D1–D4 и их соответствие; ошибка «любимого стиля всегда».
+- [Модель Такмана](concepts/tuckman-model.md) — forming/storming/norming/performing/adjourning, нелинейная динамика производительности, «мамонт» как общая цель, поведение PM на сторминге и при расставании.
+- [Модель четырёх ушей (Шульц фон Тун)](concepts/four-ears-model.md) — факты, самораскрытие, отношение, призыв; разбор кейса и почему конфликты возникают не из-за задач.
+- [Типы коммуникации](concepts/communication-modes.md) — one-way vs two-way, формальная vs неформальная, почему неформальная коммуникация — ключевой инструмент PM.
+- [Распределённые команды](concepts/distributed-teams.md) — что ломается на удалёнке, список базовых договорённостей, роль инструментов, взгляд из управления ресурсами.
+- [Эмоциональный интеллект](concepts/emotional-intelligence.md) — триединый мозг и эмоциональный захват, эмоции vs чувства, шкала эмоций, пять зон EQ, продвинутая эмоциональная компетентность, способы развития.
+- [Project Communications Management](concepts/communications-management.md) — 3 процесса PMBOK 6, структура плана коммуникаций, три формы матрицы коммуникаций, трёхуровневые процедуры эскалации.
+- [Project Resource Management](concepts/resource-management.md) — 6 процессов PMBOK 6, материальные ресурсы vs люди, PM как лидер команды, тенденции, оценка и приобретение ресурсов, критерии выбора, OBS/RAM/RACI, Develop Team.
+
+## Материалы курса
+
+- [Финальный проект — формат (редакция с AI)](study-guides/final-project-format.md) — новая редакция формата дипломного проекта: 5 обязательных артефактов + 2 области на выбор, журнал решений, опциональный AI-лог, специальный кейс за неделю до защиты, критерии оценки 30/30/20/20.
