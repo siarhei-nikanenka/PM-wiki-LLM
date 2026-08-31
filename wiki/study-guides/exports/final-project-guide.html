@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дипломный проект</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&family=JetBrains+Mono:wght@400..600&family=Literata:opsz,wght@7..72,400..700&display=swap">
+<style>
+  :root {
+    --bg:        #EDEFF3;
+    --surface:   #FFFFFF;
+    --surface-2: #E2E6EC;
+    --ink:       #131B26;
+    --ink-soft:  #4C5866;
+    --ink-faint: #838F9D;
+    --line:      #D2D8E0;
+    --line-soft: #E4E8ED;
+    --accent:    #2B4A82;
+    --accent-on: #FFFFFF;
+    --accent-wash:#DDE4F1;
+    --signal:    #A9532B;
+    --signal-on: #FFFFFF;
+    --signal-wash:#F2E2D8;
+    --bar-1:     #2B4A82;
+    --bar-2:     #46658F;
+    --bar-3:     #A9532B;
+    --bar-4:     #6F6047;
+    --bar-ink:   #FFFFFF;
+
+    --display: "Literata", Georgia, "Times New Roman", serif;
+    --body:    "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mono:    "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+
+    --measure: 66ch;
+    --rail: 3.75rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #0F141B;
+      --surface:   #161D26;
+      --surface-2: #1D2630;
+      --ink:       #E7ECF2;
+      --ink-soft:  #9DAAB9;
+      --ink-faint: #6D7B8A;
+      --line:      #2A3541;
+      --line-soft: #212B35;
+      --accent:    #85A9E8;
+      --accent-on: #0F141B;
+      --accent-wash:#1B2739;
+      --signal:    #E0906A;
+      --signal-on: #0F141B;
+      --signal-wash:#2E2119;
+      --bar-1:     #9DBBEE;
+      --bar-2:     #6E86A8;
+      --bar-3:     #E0A07A;
+      --bar-4:     #B0A085;
+      --bar-ink:   #0F141B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #0F141B;
+    --surface:   #161D26;
+    --surface-2: #1D2630;
+    --ink:       #E7ECF2;
+    --ink-soft:  #9DAAB9;
+    --ink-faint: #6D7B8A;
+    --line:      #2A3541;
+    --line-soft: #212B35;
+    --accent:    #85A9E8;
+    --accent-on: #0F141B;
+    --accent-wash:#1B2739;
+    --signal:    #E0906A;
+    --signal-on: #0F141B;
+    --signal-wash:#2E2119;
+    --bar-1:     #9DBBEE;
+    --bar-2:     #6E86A8;
+    --bar-3:     #E0A07A;
+    --bar-4:     #B0A085;
+    --bar-ink:   #0F141B;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+  .sheet {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 3.5rem) clamp(1.1rem, 4vw, 3rem) 4rem;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.75rem; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin: 0 0 1.1rem;
+  }
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 7vw, 3.9rem);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 0 0 .9rem;
+  }
+  .lede {
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 2.3vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 40ch;
+    margin: 0;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 2.25rem 0 0;
+  }
+  .facts > div { background: var(--surface); padding: .95rem 1.05rem; }
+  .facts dt {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 .4rem;
+  }
+  .facts dd { margin: 0; font-weight: 500; font-size: .95rem; line-height: 1.35; }
+
+  /* ---------- toc ---------- */
+  .toc { margin: 2.5rem 0 0; }
+  .toc ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .toc a {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: .78rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: .4rem .7rem;
+    transition: border-color .15s, color .15s;
+  }
+  .toc a:hover { color: var(--accent); border-color: var(--accent); }
+  .toc a b { color: var(--signal); font-weight: 600; margin-right: .45em; }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 3.5rem; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: .9rem;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: .55rem;
+    margin-bottom: 1.6rem;
+  }
+  .sec-head h2 {
+    font-family: var(--display);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .sec-head .count {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  p { max-width: var(--measure); }
+  .prose p { margin: 0 0 1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 600; }
+
+  .callout {
+    border-left: 3px solid var(--signal);
+    background: var(--signal-wash);
+    padding: .9rem 1.1rem;
+    margin: 1.5rem 0 0;
+    max-width: var(--measure);
+  }
+  .callout p { margin: 0; font-size: .95rem; }
+
+  /* ---------- parts ---------- */
+  .part {
+    display: grid;
+    grid-template-columns: var(--rail) 1fr;
+    gap: 0 1.5rem;
+    border-top: 1px solid var(--line);
+    padding: 1.9rem 0 .3rem;
+  }
+  .part:first-of-type { border-top: none; padding-top: .3rem; }
+  .mark {
+    font-family: var(--display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -.03em;
+  }
+  .part h3 {
+    font-family: var(--body);
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin: .25rem 0 .1rem;
+    letter-spacing: -.005em;
+  }
+  .part .sub {
+    font-size: .9rem;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+    max-width: var(--measure);
+  }
+  .tag {
+    display: inline-block;
+    vertical-align: .12em;
+    font-family: var(--mono);
+    font-size: .63rem;
+    font-weight: 500;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding: .18rem .45rem;
+    margin-left: .55rem;
+    white-space: nowrap;
+  }
+  .tag-req { background: var(--accent); color: var(--accent-on); }
+  .tag-opt { background: var(--surface-2); color: var(--ink-soft); }
+  .tag-key { background: var(--signal); color: var(--signal-on); }
+
+  .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--line-soft); }
+  .items > li { background: var(--surface); padding: .85rem 1rem; display: grid; grid-template-columns: 1.6rem 1fr; gap: .8rem; }
+  .items .n {
+    font-family: var(--mono);
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--signal);
+    padding-top: .12rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .items .t { margin: 0; font-size: .95rem; max-width: var(--measure); }
+  .items .t b { font-weight: 600; }
+  .items .t em { font-style: normal; color: var(--ink-soft); }
+
+  .bullets { margin: 1rem 0 0; padding-left: 1.15rem; max-width: var(--measure); }
+  .bullets li { margin-bottom: .4rem; font-size: .95rem; }
+
+  /* ---------- tables ---------- */
+  .scroll { overflow-x: auto; margin-top: 1rem; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .9rem; }
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: .5rem;
+  }
+  th, td { text-align: left; padding: .6rem .85rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  thead th {
+    font-family: var(--mono);
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom: 1px solid var(--line);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody th { font-weight: 600; white-space: nowrap; }
+  .cols { background: var(--surface); border: 1px solid var(--line); }
+
+  /* ---------- weights ---------- */
+  .weights { margin-top: .5rem; }
+  .bar { display: flex; height: 3.1rem; border: 1px solid var(--line); overflow: hidden; }
+  .bar span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--bar-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .w1 { flex: 30; background: var(--bar-1); }
+  .w2 { flex: 30; background: var(--bar-2); }
+  .w3 { flex: 20; background: var(--bar-3); }
+  .w4 { flex: 20; background: var(--bar-4); }
+
+  .swatch {
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    margin-right: .5rem;
+    vertical-align: -.02rem;
+  }
+  .s1 { background: var(--bar-1); }
+  .s2 { background: var(--bar-2); }
+  .s3 { background: var(--bar-3); }
+  .s4 { background: var(--bar-4); }
+  td.pct { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .split {
+    display: flex;
+    align-items: baseline;
+    gap: .75rem;
+    font-family: var(--mono);
+    font-size: .74rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1.5rem;
+  }
+  .split .line { flex: 1; height: 1px; background: var(--line); }
+
+  /* ---------- timing ---------- */
+  .timing { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 1rem; }
+  .timing > div { background: var(--surface); padding: 1.1rem 1.15rem; }
+  .timing .dur {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    display: block;
+    margin-bottom: .3rem;
+  }
+  .timing h4 { margin: 0 0 .45rem; font-size: 1rem; font-weight: 600; }
+  .timing p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 34rem) {
+    :root { --rail: 2.4rem; }
+    .mark { font-size: 1.9rem; }
+    .part { gap: 0 1rem; }
+    .sec-head { flex-wrap: wrap; }
+    .sec-head .count { margin-left: 0; width: 100%; }
+  }
+
+  @media print {
+    :root { --bg: #FFFFFF; --surface: #FFFFFF; --surface-2: #F1F1F1; }
+    body { font-size: 10.5pt; }
+    .sheet { max-width: none; padding: 0; }
+    .toc { display: none; }
+    section { break-inside: auto; margin-top: 1.6rem; }
+    .part, .timing > div, .callout, table { break-inside: avoid; }
+    .sec-head { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="masthead">
+    <p class="eyebrow">Управление проектами в IT · финальная работа</p>
+    <h1>Дипломный проект</h1>
+    <p class="lede">Оценивается не текст, а решения за текстом и способность их защитить.</p>
+    <dl class="facts">
+      <div><dt>Формат</dt><dd>Пакет документов + устная защита</dd></div>
+      <div><dt>Объём</dt><dd>До 15 страниц ядра</dd></div>
+      <div><dt>Сдача</dt><dd>Индивидуально, один раз в конце</dd></div>
+      <div><dt>Защита</dt><dd>7 мин доклад + 10–13 мин вопросов</dd></div>
+    </dl>
+  </header>
+
+  <nav class="toc" aria-label="Содержание">
+    <ol>
+      <li><a href="#why"><b>§</b>Правила игры</a></li>
+      <li><a href="#part-a"><b>A</b>Ядро — 5 артефактов</a></li>
+      <li><a href="#part-b"><b>B</b>Две области на выбор</a></li>
+      <li><a href="#part-c"><b>C</b>Журнал решений</a></li>
+      <li><a href="#part-d"><b>D</b>AI-лог</a></li>
+      <li><a href="#part-e"><b>E</b>Специальный кейс</a></li>
+      <li><a href="#criteria"><b>%</b>Критерии оценки</a></li>
+      <li><a href="#defense"><b>→</b>Защита</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="why">
+      <div class="sec-head">
+        <h2>Правила игры</h2>
+        <span class="count">Прочитать один раз, вернуться перед сдачей</span>
+      </div>
+      <div class="prose">
+        <p>Раньше диплом оценивал документ: объём написанного честно отражал объём продуманного —
+        пока писать приходилось руками. Сейчас план управления проектом на сорок страниц
+        генерируется за пятнадцать минут, и по нему невозможно отличить того, кто думал,
+        от того, кто промптил.</p>
+        <p>Поэтому формализация не убрана, а понижена в весе. Ядро артефактов остаётся —
+        вы обязаны уметь работать с формой. Но центр оценки перенесён на <strong>решения,
+        обработку изменения и устную защиту</strong>: на то, что AI не производит за вас.</p>
+        <div class="callout">
+          <p><strong>AI разрешён и приветствуется.</strong> Пользуйтесь им свободно. Ровно поэтому
+          на защите вас будут спрашивать не «что написано», а «почему так, какие были альтернативы
+          и что заставит это решение отменить».</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="package">
+      <div class="sec-head">
+        <h2>Что входит в пакет</h2>
+        <span class="count">A–E</span>
+      </div>
+
+      <article class="part" id="part-a">
+        <div class="mark" aria-hidden="true">A</div>
+        <div>
+          <h3>Ядро формализации<span class="tag tag-req">обязательно</span></h3>
+          <p class="sub">Пять артефактов, которые сдают все, независимо от продукта и методологии.</p>
+          <ol class="items">
+            <li>
+              <span class="n">01</span>
+              <p class="t"><b>Устав проекта / Product Vision.</b> Сокращённый устав, цели,
+              критерии успеха, ограничения проекта.</p>
+            </li>
+            <li>
+              <span class="n">02</span>
+              <p class="t"><b>Содержание.</b> WBS или роадмэп → бэклог продукта, по выбранной вами
+              методологии. Плюс одно нефункциональное требование с измеримым порогом.</p>
+            </li>
+            <li>
+              <span class="n">03</span>
+              <p class="t"><b>Расписание с одним расчётом «руками».</b> Для waterfall — диаграмма Ганта. Для agile —
+              release plan на velocity со story points и трёхточечной оценкой.
+              <em>Форма представления на выбор: диаграмма Ганта со связями между работами
+              или таблица в любом виде.</em></p>
+            </li>
+            <li>
+              <span class="n">04</span>
+              <p class="t"><b>Бюджет.</b> Cost baseline. Метод оценки назван и обоснован
+              (аналогия / параметрическая / PERT / bottom-up). Management reserve и contingency
+              reserve разделены. Показано влияние выбранного типа контракта на структуру бюджета.</p>
+            </li>
+            <li>
+              <span class="n">05</span>
+              <p class="t"><b>Риск-реестр.</b> 5–7 рисков в формате «причина → событие → последствие».
+              Качественная оценка P×I, стратегия реагирования, владелец, триггер срабатывания.</p>
+            </li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="part" id="part-b">
+        <div class="mark" aria-hidden="true">B</div>
+        <div>
+          <h3>Две области на выбор<span class="tag tag-req">обязательно</span></h3>
+          <p class="sub">Выберите <b>две</b> из шести и раскройте на том же уровне детализации,
+          что и ядро.</p>
+          <div class="scroll">
+            <table class="cols">
+              <caption>Области и минимальное содержание</caption>
+              <thead>
+                <tr><th scope="col">Область</th><th scope="col">Минимальное содержание</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Стейкхолдеры и коммуникации</th><td>Реестр, матрица Power-Interest, план коммуникаций</td></tr>
+                <tr><th scope="row">Качество</th><td>Критерии приёмки, DoD, стратегия тестирования (вовлечение ресурсов и виды тестирования)</td></tr>
+                <tr><th scope="row">Управление изменениями</th><td>Процедура Integrated Change Control, change register</td></tr>
+                <tr><th scope="row">Команда и мотивация</th><td>Team Charter, RACI, один инструмент Management 3.0</td></tr>
+                <tr><th scope="row">Требования вглубь</th><td>Графическая модель: DFD / Use Case / State Transition / Swimlane и два формата документации требований на основе графической модели: Use case и User Story</td></tr>
+                <tr><th scope="row">Закрытие проекта</th><td>Критерии приёмки, передача, lessons learned</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <p><strong>Обоснование выбора — полстраницы, и оно оценивается отдельно.</strong>
+            Почему для вашего продукта критичны именно эти две области, а остальные четыре — нет.
+            Сам выбор является проверкой суждения.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="part" id="part-c">
+        <div class="mark" aria-hidden="true">C</div>
+        <div>
+          <h3>Журнал решений<span class="tag tag-key">главный артефакт</span></h3>
+          <p class="sub">8–12 решений. По одной строке на каждое.</p>
+          <div class="scroll">
+            <table class="cols">
+              <caption>Структура записи</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Решение</th>
+                  <th scope="col">Контекст</th>
+                  <th scope="col">Рассмотренные альтернативы</th>
+                  <th scope="col">Выбор</th>
+                  <th scope="col">Обоснование</th>
+                  <th scope="col">Что заставит отменить</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <p class="sub" style="margin-top:1rem">Последняя колонка важнее остальных: она требует
+          понимания собственных допущений и не пишется без понимания проекта.</p>
+          <p style="font-size:.95rem;margin:0 0 .3rem"><b>Минимум пять тем должны быть покрыты:</b></p>
+          <ul class="bullets">
+            <li>выбор методологии;</li>
+            <li>выбор типа контракта;</li>
+            <li>состав MVP — что выкинуто и почему;</li>
+            <li>одна оценка — почему именно эта цифра;</li>
+            <li>одна стратегия реагирования на риск.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Журнал ведётся по ходу курса, а не пишется в конце.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="part" id="part-d">
+        <div class="mark" aria-hidden="true">D</div>
+        <div>
+          <h3>AI-лог<span class="tag tag-opt">опционально</span></h3>
+          <p class="sub">Необязательный артефакт. Если ведёте — приложите к пакету.</p>
+          <div class="scroll">
+            <table class="cols">
+              <caption>Структура записи</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Задача</th>
+                  <th scope="col">Промпт (сокращённо)</th>
+                  <th scope="col">Что выдал AI</th>
+                  <th scope="col">Что взято / отклонено</th>
+                  <th scope="col">Почему</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <p class="sub" style="margin-top:1rem">Ценнее всего записи с <b>отклонением</b> выхлопа:
+          сырой ответ AI плюс разбор, что именно было не так. Опечатка или форматирование не в счёт —
+          интересна содержательная ошибка: нереалистичная оценка, риск без причины, метрика без
+          порога, противоречие уставу.</p>
+          <p class="sub">На оценку AI-лог напрямую не влияет, но даёт хороший материал для
+          разговора на защите. Приёмка чужой работы — основной навык PM, и здесь он тренируется
+          напрямую.</p>
+        </div>
+      </article>
+
+      <article class="part" id="part-e">
+        <div class="mark" aria-hidden="true">E</div>
+        <div>
+          <h3>Специальный кейс<span class="tag tag-req">обязательно</span></h3>
+          <p class="sub">Карточку вы получаете <b>за неделю до защиты</b>, уже после того, как
+          ядро сдано в черновике. Отдельного чекпоинта нет — ответ входит в общий пакет.</p>
+          <p style="font-size:.95rem;margin:0 0 .3rem"><b>Что сдаётся по кейсу:</b></p>
+          <ul class="bullets">
+            <li>change request по форме;</li>
+            <li>пересчитанные расписание и бюджет — с цифрами «до / после»;</li>
+            <li>обновлённый риск-реестр;</li>
+            <li>письмо стейкхолдеру на одну страницу.</li>
+          </ul>
+          <p class="sub" style="margin-top:1.1rem"><b>Примеры карточек</b> — чтобы понимать характер
+          вводной. Реальный банк шире:</p>
+          <ul class="bullets">
+            <li>ключевой разработчик увольняется на третьей неделе; замена — шесть недель найма плюс онбординг;</li>
+            <li>клиент срезает бюджет на 30%, дата релиза не двигается;</li>
+            <li>стейкхолдер, отсутствующий в реестре, приносит требование, ломающее архитектуру, — и у него есть власть;</li>
+            <li>на приёмке MVP клиент говорит «это не то, что мы просили», при подписанном уставе.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="criteria">
+      <div class="sec-head">
+        <h2>Критерии оценки проекта</h2>
+        <span class="count">Сумма — 100%</span>
+      </div>
+      <div class="weights">
+        <div class="bar" role="img" aria-label="Распределение веса: артефакты 30%, журнал решений 30%, специальный кейс 20%, защита 20%">
+          <span class="w1">30%</span>
+          <span class="w2">30%</span>
+          <span class="w3">20%</span>
+          <span class="w4">20%</span>
+        </div>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Критерий</th><th scope="col">Вес</th><th scope="col">Что смотрим</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="swatch s1"></span>Полнота и корректность артефактов</th>
+                <td class="pct">30%</td>
+                <td>Форма соблюдена, внутренние противоречия отсутствуют, обоснование выбора двух областей осмысленно</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="swatch s2"></span>Качество решений (журнал)</th>
+                <td class="pct">30%</td>
+                <td>Альтернативы реальные, а не декоративные; обоснование опирается на контекст продукта; условия отмены названы честно</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="swatch s3"></span>Обработка специального кейса</th>
+                <td class="pct">20%</td>
+                <td>Цифры действительно пересчитаны; change request корректен; письмо стейкхолдеру пригодно к отправке</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="swatch s4"></span>Защита</th>
+                <td class="pct">20%</td>
+                <td>Расчёт воспроизводится вживую; решения раскрываются глубже, чем написано; ответ «не знаю» с рассуждением лучше, чем блеф</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="split"><span>Итоговая оценка курса</span><span class="line"></span><span>50% тесты · 50% защита проекта</span></div>
+      </div>
+    </section>
+
+    <section id="defense">
+      <div class="sec-head">
+        <h2>Защита</h2>
+        <span class="count">~20 минут на человека</span>
+      </div>
+      <div class="timing">
+        <div>
+          <span class="dur">7 мин</span>
+          <h4>Презентация</h4>
+          <p>Продукт, ключевые решения, разбор специального кейса. Без пересказа артефактов —
+          преподаватель их прочитал.</p>
+        </div>
+        <div>
+          <span class="dur">10–13 мин</span>
+          <h4>Вопросы</h4>
+          <p>Только по вашим собственным артефактам. Обязательный минимум: один вопрос
+          на ручной расчёт и один на специальный кейс.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="volume">
+      <div class="sec-head">
+        <h2>Объём</h2>
+        <span class="count">Превышение не улучшает оценку</span>
+      </div>
+      <div class="scroll">
+        <table class="cols">
+          <thead>
+            <tr><th scope="col">Часть</th><th scope="col">Страниц</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Ядро (A) + две области (B)</th><td class="pct">не более 15</td></tr>
+            <tr><th scope="row">Журнал решений (C)</th><td class="pct">2–4</td></tr>
+            <tr><th scope="row">AI-лог (D), если прикладывается</th><td class="pct">1–2</td></tr>
+            <tr><th scope="row">Специальный кейс (E)</th><td class="pct">2–3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p>Длинный пакет читается как попытка спрятать отсутствие решений за объёмом.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Курс «Управление проектами в IT» · инструкция к финальному проекту</footer>
+</div>
+</body>
+</html>
