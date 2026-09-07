@@ -8,6 +8,8 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 
 Базируется на [[pmbok]] (6-я и 7-я редакции) и Agile/Scrum ([[agile-manifesto]]).
 
+Нумерация лекций не совпадает с нумерацией тем программы почти нигде (расхождения отмечены ниже по каждой теме), а сама нумерация лекций идёт с разрывом: материалов лекций 21 и 22 в курсе нет, за [[pm-20-reports|PM 20]] сразу следует [[pm-23-leadership-motivation-2|PM 23]]. Последняя лекция курса — [[pm-26-project-closure|PM 26]].
+
 ## Программа курса (20 тем)
 1. Введение
 2. Методологии управления проектами в ИТ ([[waterfall]])
@@ -25,12 +27,12 @@ title: Курс «Управление проектами в IT» (IT-Academy)
 14. Управление рисками — [[pm-17-risk-management]] (см. [[risk-management]]); также лекция [[pm-13-agile-planning|PM 13]] про Agile-планирование (бэклог, оценка, Velocity, WSJF) не имеет точного соответствия в программе из 20 тем — ближе всего к теме 3 (гибкие методологии) или теме 5 (план проекта)
 15. Управление мотивацией команды проекта ([[management-3-0]], [[management-3-0-tools]]) — [[pm-15-management-3-0]]; номер лекции совпадает с номером темы программы, редкий случай для этого курса. Тема разворачивается ещё в двух лекциях: [[pm-19-leadership-motivation-1]] (власть и делегирование, потребности и вовлечённость, справедливость, 1:1, выгорание — [[leadership-power]], [[motivation]], [[motivation-theories]], [[one-on-one]], [[burnout]]) и [[pm-23-leadership-motivation-2]] (конфликты, ситуационное лидерство, стадии команды, коммуникация, эмоциональный интеллект — [[conflict-management]], [[situational-leadership]], [[tuckman-model]], [[four-ears-model]], [[communication-modes]], [[distributed-teams]], [[emotional-intelligence]])
 16. Управление изменениями — [[pm-14-change-management]] (см. [[change-management]]); лекция 14 закрывает тему 16 программы
-17. Agile-ретроспектива — частично затронуто в [[pm-18-quality-management]] через параллель [[pdca|цикла Деминга]] и Scrum (ретроспектива как шаг Act)
-18. Процессы завершения проекта — уже частично затронуто в [[pm-9-project-integration]] ([[project-closure]]), опережая порядковый номер темы в программе
+17. Agile-ретроспектива — [[pm-25-agile-retrospective]] (см. [[retrospective]], [[retrospective-formats]], [[root-cause-analysis]]); номер лекции 25 при номере темы 17. До этой лекции тема была затронута только косвенно — через параллель [[pdca|цикла Деминга]] и Scrum в [[pm-18-quality-management]] (ретроспектива как шаг Act)
+18. Процессы завершения проекта — [[pm-26-project-closure]], финальная лекция курса (см. [[project-closure]], [[project-final-report]], [[knowledge-management]]); первая половина лекции пересобирает весь курс в единую картину. Тема была частично затронута заранее, в [[pm-9-project-integration]], опережая порядковый номер в программе
 19. Экзаменационный тест
 20. Презентация проектов
 
 ## Оценка
 50% — средний балл промежуточных и финального тестов, 50% — защита учебного проекта (накопленный пакет ДЗ на придуманный продукт, презентация 15–20 минут). Сертификат: «Successfully Completed» при среднем балле ≥7, иначе «Completed».
 
-**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]], [[pm-10-scope-management]], [[pm-11-requirements-documentation]], [[pm-12-schedule-management]], [[pm-13-agile-planning]], [[pm-14-change-management]], [[pm-15-management-3-0]], [[pm-16-cost-management]], [[pm-17-risk-management]], [[pm-18-quality-management]], [[pm-19-leadership-motivation-1]], [[pm-20-reports]], [[pm-23-leadership-motivation-2]], [[pm-24-communications-and-resources]]
+**Источники:** [[pm-1-intro]], [[pm-7-discovery-and-initiation]], [[pm-8-stakeholders]], [[pm-9-project-integration]], [[pm-10-scope-management]], [[pm-11-requirements-documentation]], [[pm-12-schedule-management]], [[pm-13-agile-planning]], [[pm-14-change-management]], [[pm-15-management-3-0]], [[pm-16-cost-management]], [[pm-17-risk-management]], [[pm-18-quality-management]], [[pm-19-leadership-motivation-1]], [[pm-20-reports]], [[pm-23-leadership-motivation-2]], [[pm-24-communications-and-resources]], [[pm-25-agile-retrospective]], [[pm-26-project-closure]]

@@ -27,6 +27,8 @@
 - [PM 20 — Отчёты](sources/pm-20-reports.md) — отчёт как целевое сообщение, три аудитории и четыре типа отчётов, Sprint Report в Confluence, burndown (9 паттернов), burnup, velocity chart, control chart, cycle time by month, CFD, dashboard, report checklist, частые ошибки, коврлетр vs executive summary. Источник: `raw/Lectures Summaries/pm_20 Reports.md`, `raw/Slides/PM 20 Reports.pptx.pdf`, `raw/Transcriptions/Копия PM 20 Reports.txt`
 - [PM 23 — Лидерство и мотивация команды. Часть 2](sources/pm-23-leadership-motivation-2.md) — роль PM за пределами процессов: треугольник Карпмана и модель Бауэра, ситуационное лидерство Херси–Бланшара (S1–S4 × D1–D4), модель Такмана и «мамонт», четыре уха Шульца фон Туна, one-way/two-way и формальная/неформальная коммуникация, распределённые команды, эмоциональный интеллект. Источник: `raw/Lectures Summaries/pm_23 Leadership Team motivation. Part 2.md`, `raw/Slides/PM 23 Leadership and Team Motivation. Part 2.pptx.pdf`, `raw/Transcriptions/Копия PM 23 Leadership and Team Motivation. Part 2.txt`
 - [PM 24 — Управление коммуникациями и ресурсами проекта](sources/pm-24-communications-and-resources.md) — 3 процесса Project Communications Management, план и матрица коммуникаций, трёхуровневая эскалация, 6 процессов Project Resource Management, материальные ресурсы vs люди, критерии выбора ресурса, OBS/RAM/RACI, Develop Team, современные тенденции. Источник: `raw/Lectures Summaries/pm_24 Communication and Resources Management.md`, `raw/Slides/PM 24 Communication management + Resource Management.pptx.pdf`, `raw/Transcriptions/Копия PM 24 Communication management + Resource Management.txt`
+- [PM 25 — Agile-ретроспектива](sources/pm-25-agile-retrospective.md) — ретро как разговор о процессе, а не о результате; пять шагов встречи, подготовка и ревизия action items, вовлечение всех, голосование точками, квота на улучшения и «костыли», 5 Whys и диаграмма Исикавы, каталог форматов, онлайн-ретро, do's and don'ts. Источник: `raw/Lectures Summaries/pm_25 Agile Retrospective.md`, `raw/Slides/PM 25 Agile Retrospective.pptx.pdf`, `raw/Transcriptions/Копия PM 25 Agile Retrospective.txt`
+- [PM 26 — Завершение проекта](sources/pm-26-project-closure.md) — финальная лекция курса: пересборка всего материала в систему (проект, ограничения, фазы и методология, волны процессных групп, стейкхолдеры, роль PM, критерии успеха, 10 областей знаний) плюс закрытие проекта — логика PRINCE2, плановое vs досрочное, три практических шага, итоговый отчёт и Lessons Learned. Источник: `raw/Lectures Summaries/pm_26 Closing a project.md`, `raw/Slides/PM 26 Closing a project.pptx.pdf`, `raw/Transcriptions/Копия PM 26 Closing a project.txt`
 
 ## Entities
 
@@ -40,6 +42,7 @@
 - [Стивен Карпман](entities/stephen-karpman.md) — автор драматического треугольника (жертва/преследователь/спасатель), 1968.
 - [Брюс Такман](entities/bruce-tuckman.md) — автор модели стадий развития команды forming → storming → norming → performing → adjourning.
 - [Дэниел Гоулман](entities/daniel-goleman.md) — автор книги «Эмоциональный интеллект», описал амигдалу и эмоциональный захват.
+- [Каору Исикава](entities/kaoru-ishikawa.md) — японский исследователь качества, автор диаграммы «рыбья кость» для разбора причин проблемы.
 
 ## Concepts
 
@@ -73,9 +76,10 @@
 - [Матрицы анализа стейкхолдеров](concepts/stakeholder-matrices.md) — Power-Interest, Impact-Influence, стратегии Всемирного банка, Salience Model.
 - [RACI и DACI](concepts/raci-daci.md) — распределение ответственности за исполнение и за принятие решений.
 - [Team Charter](concepts/team-charter.md) — «конституция команды»: миссия, роли, коммуникация, разрешение конфликтов.
-- [Процессные группы и области знаний PMBOK 6](concepts/pmbok-process-groups.md) — 5 групп × 10 областей знаний, управление интеграцией, план проекта из 14 компонентов, цикл М&К, соответствие PMBOK↔Agile.
+- [Процессные группы и области знаний PMBOK 6](concepts/pmbok-process-groups.md) — 5 групп × 10 областей знаний, поимённый состав всех пяти групп (49 процессов) с двумя расхождениями, управление интеграцией, план проекта из 14 компонентов, цикл М&К, соответствие PMBOK↔Agile.
 - [Управление знаниями проекта](concepts/knowledge-management.md) — Lessons Learned, Communities of Practice, 4 типа артефактов, скрам-события как инструменты знаний.
-- [Закрытие проекта](concepts/project-closure.md) — закрытие как переход, разграничение ответственности после сдачи, риски незакрытого проекта.
+- [Закрытие проекта](concepts/project-closure.md) — закрытие как переход и как самый недооценённый процесс: четыре основания считать проект завершённым, логика PRINCE2 (hand over → evaluate → recommend closure), плановое vs досрочное закрытие, три практических шага, «закрытие проекта ≠ закрытие договоров», adjourning команды.
+- [Итоговый отчёт проекта](concepts/project-final-report.md) — шесть обязательных блоков отчёта, пять форматов по зрелости компании, пример простого рабочего отчёта и правило «лучше простой сделанный, чем идеальный ненаписанный».
 - [Project Scope Management](concepts/scope-management.md) — 6 процессов PMBOK 6 (Plan/Collect/Define/WBS/Validate/Control Scope), содержание продукта vs проекта, ответственность PM vs бизнес-аналитика.
 - [Функциональные и нефункциональные требования](concepts/requirements-types.md) — определения требования, 3 уровня функциональных требований, бизнес-правила (6 типов), атрибуты качества, ограничения.
 - [Методы сбора требований](concepts/requirements-elicitation.md) — интервью, фокус-группы, мозговой штурм, прототипирование, use cases, user stories, анализ документов, моделирование процессов, бенчмаркинг; типичные ошибки и признаки завершения.
@@ -113,6 +117,9 @@
 - [Эмоциональный интеллект](concepts/emotional-intelligence.md) — триединый мозг и эмоциональный захват, эмоции vs чувства, шкала эмоций, пять зон EQ, продвинутая эмоциональная компетентность, способы развития.
 - [Project Communications Management](concepts/communications-management.md) — 3 процесса PMBOK 6, структура плана коммуникаций, три формы матрицы коммуникаций, трёхуровневые процедуры эскалации.
 - [Project Resource Management](concepts/resource-management.md) — 6 процессов PMBOK 6, материальные ресурсы vs люди, PM как лидер команды, тенденции, оценка и приобретение ресурсов, критерии выбора, OBS/RAM/RACI, Develop Team.
+- [Agile-ретроспектива](concepts/retrospective.md) — разговор о том, как команда работала (а не что сделала); пять шагов встречи, подготовка и ревизия action items, переформулировка вопросов и вовлечение всех, голосование точками, квота на улучшения и техдолг, онлайн-ретро, таблица do's and don'ts.
+- [Форматы ретроспективы](concepts/retrospective-formats.md) — Agile Retrospective, Mad–Sad–Glad, Start–Stop–Continue, Starfish (5 направлений) и метафорические Sailboat / Air Balloon / Speedcar с разбором элементов и реальным примером заполнения.
+- [Анализ корневых причин](concepts/root-cause-analysis.md) — 5 Whys с полной цепочкой разбора и диаграмма Исикавы (пять категорий причин); когда выбирать одну технику, а когда другую.
 
 ## Материалы курса
 

@@ -33,5 +33,6 @@ title: Velocity и метрики Agile
 - [[scrum]]
 - [[agile-planning]]
 - [[prioritization]]
+- [[retrospective]]
 - [[project-estimation]]
 - [[pm-3-methodologies]]
