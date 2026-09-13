@@ -4,7 +4,7 @@
 
 ## Sources
 
-- [PM 1 — Intro](sources/pm-1-intro.md) — вводное занятие курса, преподаватель, структура курса, типы IT-компаний, знакомство со студентами группы. Источник: `raw/Lectures Summaries/PM 1 Intro call_summary...`, `raw/Slides/PM 1 Intro.pptx.pdf`, `raw/Transcriptions/youtube_yt_4d887e59.txt`
+- [PM 1 — Intro](sources/pm-1-intro.md) — вводное занятие курса, преподаватель, структура курса, типы IT-компаний, состав группы без личных данных. Источник: `raw/Lectures Summaries/PM 1 Intro call_summary...`, `raw/Slides/PM 1 Intro.pptx.pdf`
 - [PM 2 — Main Notions](sources/pm-2-main-notions.md) — проект vs процесс, Iron Triangle, scope creep, оценка проекта, стейкхолдеры, роль PM. Источник: `raw/Lectures Summaries/pm_ 2 Main Notions summary.md`, `raw/Slides/PM 2 Main Notions.pdf`, `raw/Slides/pm_tasks.pdf`, `raw/Transcriptions/Копия PM 2 Main Notions.txt`
 - [PM 3 — Methodologies](sources/pm-3-methodologies.md) — Waterfall vs Agile, Agile Manifesto, velocity, типы контрактов. Источник: `raw/Lectures Summaries/pm 3 Methodologies_lecture...`, `raw/Slides/PM 3 Methodologies.pdf`, `raw/Slides/Methodologies_PM Tasks.pdf`, `raw/Transcriptions/Копия PM 3 Methodologies.txt`
 - [PM 4 — Agile-методологии](sources/pm-4-agile-methodologies.md) — обзор Scrum, Kanban, Scrumban, XP, Lean и масштабируемых фреймворков (LeSS, SAFe, Nexus). Источник: `raw/Lectures Summaries/pm_4 Agile Methodologies.md`, `raw/Slides/PM 4 Agile methodologies.pptx.pdf`, `raw/Slides/Agile Frameworks_PM Tasks.pdf`, `raw/Transcriptions/Копия PM 4 Agile methodologies.txt`
