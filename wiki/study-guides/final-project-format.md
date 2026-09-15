@@ -33,7 +33,9 @@ title: Финальный проект — формат (редакция с AI)
    См. [[scope-management]], [[requirements-types]].
 3. **Расписание с одним расчётом «руками»** — либо диаграмма Ганта для waterfall-варианта,
    либо release plan на velocity со story points и трёхточечной оценкой для agile-варианта.
-   См. [[schedule-management]], [[agile-planning]].
+   **Трёхточечная оценка считается по техническим задачам в часах или днях, а не по story
+   points.**
+   См. [[schedule-management]], [[agile-planning]], [[project-estimation]].
 4. **Бюджет** — cost baseline; метод оценки назван и обоснован (аналогия / параметрическая /
    PERT / bottom-up); management reserve и contingency reserve разделены; показано влияние
    выбранного типа контракта на структуру бюджета. См. [[cost-management]], [[contract-types]].
